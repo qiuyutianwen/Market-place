@@ -8,7 +8,7 @@
 //include 'insertData.php';
 //include 'fetchdata.php';
 //include 'curlFetchData.php';
-include 'home.html';
+include 'login.html';
 ?>
 </body>
 </html>
