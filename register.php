@@ -113,7 +113,7 @@
 <html>
     <head>
         
-        <title>Login Form</title>
+        <title>Register</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -214,7 +214,7 @@
                             <div class="login-form">
                                 <div class="header">
                                     <div class="welcome">Welcome Back</div>
-                                    <div class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                                    <!-- <div class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div> -->
                                 </div>
                                 
                                 <form class="form-content">
