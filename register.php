@@ -86,7 +86,7 @@
 	            // Attempt to execute the prepared statement
 	            if(mysqli_stmt_execute($stmt)){
 	                // Redirect to login page
-	                include "home.html";
+	                $reg_success = "true";
 	            } else{
 	            	$error2 = mysqli_stmt_error($stmt);
 	                echo "<script>alert('$error2');</script>";
@@ -99,6 +99,11 @@
 	    
 	    // Close connection
 	    mysqli_close($link);
+	    if($reg_success === "true")
+	    {
+	    	header('Location: /home.html');
+            exit ;
+	    }
 	}
 ?>
 
