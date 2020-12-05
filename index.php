@@ -5,10 +5,10 @@
   </head>
   <body>
 <?php
-//include 'insertData.php';
+include 'createUserTable.php';
 //include 'fetchdata.php';
 //include 'curlFetchData.php';
-include 'login.html';
+//include 'login.html';
 ?>
 </body>
 </html>
