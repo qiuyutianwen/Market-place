@@ -7,7 +7,7 @@
 	if(isset($_POST['submit']))
 	{
 		$username_err = "Please enter a username.";
-		echo '<script>alert(' . $username_err . ')</script>';
+		echo "<script>alert('$username_err');</script>"; 
 		// Validate username
 	    // if(empty(trim($_POST["username"]))){
 	    //     $username_err = "Please enter a username.";
