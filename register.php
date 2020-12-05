@@ -1,8 +1,7 @@
 <?php
 	// Include config file
 	//require_once "config.php";
-header("home.html");
-    exit;
+include "home.html";
 	// if(isset($_POST['submit']))
 	// {
 	// 	extract($_POST);
