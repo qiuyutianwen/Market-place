@@ -3,7 +3,7 @@
 	require_once "config.php";
 	if(isset($_POST['submit']))
 	{
-		include "home.html";
+		echo "form submitted";
 		// extract($_POST);
 		// if(empty(trim($username)))
 		// {
