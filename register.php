@@ -76,9 +76,6 @@
 	        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 	         
 	        if($stmt = mysqli_prepare($link, $sql)){
-
-	        	echo "<script>alert('1');</script>";
-
 	            // Bind variables to the prepared statement as parameters
 	            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
 	            
@@ -88,11 +85,9 @@
 	            
 	            // Attempt to execute the prepared statement
 	            if(mysqli_stmt_execute($stmt)){
-	            	echo "<script>alert('2');</script>";
 	                // Redirect to login page
 	                $reg_success = "true";
 	            } else{
-	            	echo "<script>alert('3');</script>";
 	            	$error2 = mysqli_stmt_error($stmt);
 	                echo "<script>alert('$error2');</script>";
 	            }
