@@ -1,19 +1,26 @@
 <?php
 	// Include config file
 	require_once "config.php";
-	if(isset($_POST['submit']))
+
+	// Define variables and initialize with empty values
+	$username = $password = $confirm_password = "";
+	$username_err = $password_err = $confirm_password_err = "";
+
+	if(isset($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		echo '<script>alert("Account created successfully!")</script>'; 
-		// extract($_POST);
-		// if(empty(trim($username)))
-		// {
-		// 	echo "Please enter a username!";
-		// } else {
-		// 	echo "<tr><td style=\"background-color:#F0E68C\">" . trim($username) .
-  //   "</td><td style=\"background-color:#FFA500\">" . trim($password) .
-  //   "</td><td style=\"background-color:#FFA500\">" . trim($confirmpassword) ."</td></tr>";
-		// }
+		include "home.html";
 	}
+	
+	// if(isset($_POST['submit']))
+	// {
+	// 	extract($_POST);
+	// 	if(empty(trim($username)))
+	// 	{
+	// 		echo '<script>alert("Please enter a username!")</script>'; 
+	// 	} else {
+
+	// 	}
+	// }
 ?>
 
 <!DOCTYPE html>
