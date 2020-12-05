@@ -101,7 +101,7 @@
 	    mysqli_close($link);
 	    if($reg_success === "true")
 	    {
-	    	header('Location: /home.html');
+	    	header('Location: /FetchUserData.php');
             exit ;
 	    }
 	}
