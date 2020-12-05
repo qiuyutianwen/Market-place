@@ -101,6 +101,8 @@
 	    mysqli_close($link);
 	    if($reg_success === "true")
 	    {
+	    	$success_message = "Account has been created successfully!";
+	        echo "<script>alert('$success_message');</script>";
 	    	header('Location: /FetchUserData.php');
             exit ;
 	    }
