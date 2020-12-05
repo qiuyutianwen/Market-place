@@ -50,10 +50,10 @@
 	    }
 	    
 	    // Validate confirm password
-	    if(empty(trim($_POST["confirm_password"]))){
+	    if(empty(trim($_POST["confirmpassword"]))){
 	        $confirm_password_err = "Please confirm password.";     
 	    } else{
-	        $confirm_password = trim($_POST["confirm_password"]);
+	        $confirm_password = trim($_POST["confirmpassword"]);
 	        if(empty($password_err) && ($password != $confirm_password)){
 	            $confirm_password_err = "Password did not match.";
 	        }
