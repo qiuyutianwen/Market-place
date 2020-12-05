@@ -10,7 +10,7 @@ $sql = "CREATE TABLE users (
 )";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table MyGuests created successfully";
+  echo "Table users created successfully";
 } else {
   echo "Error creating table: " . $conn->error;
 }
