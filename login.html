@@ -78,7 +78,7 @@
                                     <div class="subtitle">Create your Account and Connect with Us.</div>
                                 </div>
                                 
-                                <form class="form-content" action="register.php" method="post" name="register">
+                                <form class="form-content" action="register.php" method="post" id="register">
                                     <div class="input-field">
                                         <input type="email" name="username" required="required" class="txtField" placeholder="&#xf0e0; E-Mail ID"/>
                                         <span class="underLine"></span>
@@ -95,7 +95,7 @@
                                         </div>
                                         
                                     <div class="form-footer">
-                                        <button class="submit-btn" name="submit" type="submit" form="register" value="Submit">SignUp</button>    
+                                        <button class="submit-btn" name="submit" type="submit" onclick="submitform()">SignUp</button>    
                                     </div>    
                                 </form>                            
                             </div>
@@ -136,7 +136,13 @@
         
         
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-        
+        <script>
+function submitform()
+{
+document.getElementById("register").submit();
+alert("your form submitted");
+}
+</script>
         <script src="JS/ScriptLoginForm.js"></script>
         <script src="JS/charming.min.js"></script>
         <script src="JS/anime.min.js"></script>
