@@ -2,7 +2,7 @@
 	// Include config file
 	require_once "config.php";
 
-	if(isset($_POST['submit']))
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		extract($_POST);
 		if(empty(trim($username)))
