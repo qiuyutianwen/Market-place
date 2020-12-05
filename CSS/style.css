@@ -99,7 +99,6 @@ a:focus {
 	position: relative;
 	z-index: 1;
 	will-change: opacity;
-	opacity: 0;
 }
 
 .header__title {
