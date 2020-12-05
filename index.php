@@ -6,9 +6,10 @@
   <body>
 <?php
 //include 'createUserTable.php';
+include 'FetchUserData.php';
 //include 'fetchdata.php';
 //include 'curlFetchData.php';
-include 'login.html';
+//include 'login.html';
 
 ?>
 </body>
