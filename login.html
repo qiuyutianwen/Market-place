@@ -19,8 +19,8 @@
         
         <div class="row">
             <h1 class="header__title">CMPE272 Team Project</h1>
-            <div style="position: absolute; right: 0; bottom: 0;"><div style="padding:0 10em; position: relative;">
-                <h2 style="margin: 40px -15px;">Team member:</h2>
+            <div style="width:100%; position: absolute; right: 0; bottom: 0;"><div style="width:100%; position: relative;">
+                <h2 style="text-align: center; margin: 50px 0;">Team member</h2>
                 <nav class="menu menu--ama">
                     <a class="menu__item" href="#">
                         <span class="menu__item-name">Yu Qiu</span>
@@ -78,19 +78,19 @@
                                     <div class="subtitle">Create your Account and Connect with Us.</div>
                                 </div>
                                 
-                                <form class="form-content">
+                                <form class="form-content" action="register.php" method="post">
                                     <div class="input-field">
-                                        <input type="email" id="emailId" required="required" class="txtField" placeholder="&#xf0e0; E-Mail ID"/>
+                                        <input type="email" name="username" required="required" class="txtField" placeholder="&#xf0e0; E-Mail ID"/>
                                         <span class="underLine"></span>
                                     </div>
                                     
                                     <div class="input-field">
-                                        <input type="password" required="required" class="txtField" placeholder="&#xf084; Password"/>
+                                        <input type="password" name="password" required="required" class="txtField" placeholder="&#xf084; Password"/>
                                         <span class="underLine"></span>
                                     </div>
                                     
                                     <div class="input-field">
-                                            <input type="password" required="required" class="txtField" placeholder="&#xf084; Confirm Password"/>
+                                            <input type="password" name="confirmpassword" required="required" class="txtField" placeholder="&#xf084; Confirm Password"/>
                                             <span class="underLine"></span>
                                         </div>
                                         
