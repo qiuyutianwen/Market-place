@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("Location: /home.html");
     exit;
 }
  
@@ -31,7 +31,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $password = trim($_POST["password"]);
     }
-    
+    if(!empty($username_err))
+    {
+        echo "<script>alert('$username_err');</script>";
+    } elseif (!empty($password_err)) 
+    {
+        echo "<script>alert('$password_err');</script>";
+    }
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
@@ -64,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("Location: /home.html");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -75,7 +81,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $username_err = "No account found with that username.";
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $error1 =  mysqli_stmt_error($stmt);
+                echo "<script>alert('$error1');</script>";
             }
 
             // Close statement
@@ -85,6 +92,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Close connection
     mysqli_close($link);
+    if($username_err === "No account found with that username.")
+    {
+        echo "<script>alert('$username_err');</script>";
+    } elseif ($password_err === "The password you entered was not valid.") 
+    {
+        echo "<script>alert('$password_err');</script>";
+    }
 }
 ?>
 

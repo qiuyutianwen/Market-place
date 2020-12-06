@@ -103,7 +103,7 @@
 	    {
 	    	$success_message = "Account has been created successfully!";
 	        echo "<script>alert('$success_message');</script>";
-	    	header('Location: /FetchUserData.php');
+	    	header('Location: /login.php');
             exit ;
 	    }
 	}
