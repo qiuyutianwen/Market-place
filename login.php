@@ -184,7 +184,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 
                                 <form class="form-content" role="form" action="register.php" method="post">
                                     <div class="input-field">
-                                        <input type="email" name="username" required="required" class="txtField" placeholder="&#xf0e0; E-Mail ID"/>
+                                        <input type="email" id="emailId" name="username" required="required" class="txtField" placeholder="&#xf0e0; E-Mail ID"/>
                                         <span class="underLine"></span>
                                     </div>
                                     
