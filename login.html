@@ -54,6 +54,12 @@
                 }
             });
           }
+
+          function fbLogout(){
+            FB.logout(function(response) {
+              // user is now logged out
+            });
+          }
         </script>
         <div class="row">
             <h1 class="header__title">CMPE272 Team Project</h1>
@@ -92,7 +98,7 @@
                     <ul>
                         <li>
                             <div class="single-signin">
-                                <button type="button" title="SignUp with Google" onclick='window.location.href = "https://stackoverflow.com"'>
+                                <button type="button" title="SignUp with Google" onclick="fbLogout()">
                                     <span><i class="fab fa-google"></i></span>
                                     <span id="accGoogle">LogIn with Google</span>
                                 </button>
