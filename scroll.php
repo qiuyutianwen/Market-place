@@ -7,10 +7,10 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato|Nanum+Gothic:700|Raleway&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-        <link rel="stylesheet" href="css/StyleLoginForm.css"/> 
+		<link rel="stylesheet" type="text/css" href="CSS/base.css" />
+		<link rel="stylesheet" type="text/css" href="CSS/default.css" />
+		<link rel="stylesheet" type="text/css" href="CSS/component.css" />
+        <link rel="stylesheet" href="CSS/StyleLoginForm.css"/> 
 		<script>
 			document.documentElement.className = 'js';
 			var supportsCssVars = function() {
@@ -31,7 +31,7 @@
 			supportsCssVars() ||
 				alert('Please view this demo in a modern browser that supports CSS Variables.');
 		</script>
-		<script src="js/modernizr.custom.js"></script>
+		<script src="JS/modernizr.custom.js"></script>
 	</head>
 	<body>
 		<main>
@@ -172,11 +172,11 @@
 
 			
 		</main>
-		<script src="js/ScriptLoginForm.js"></script>
-		<script src="js/toucheffects.js"></script>
+		<script src="JS/ScriptLoginForm.js"></script>
+		<script src="JS/toucheffects.js"></script>
 		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
 		<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-		<script src="js/bundle.umd.js"></script>
+		<script src="JS/bundle.umd.js"></script>
 	</body>
 </html>
