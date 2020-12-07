@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: /home.html");
+    header("Location: /scroll.php");
     exit;
 }
  
@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("Location: /home.html");
+                            header("Location: /scroll.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -120,7 +120,56 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </head>
 
     <body class="demo-ama render">
-        
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '830689571103351',
+              cookie     : true,
+              xfbml      : true,
+              version    : 'v9.0'
+            });
+              
+            FB.AppEvents.logPageView();   
+              
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "https://connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+          function fbLogin(){
+                FB.login(function(response){
+                    if(response.authResponse){
+                        fbAfterLogin();
+                    }
+                });
+          }
+
+          function fbAfterLogin(){
+            FB.getLoginStatus(function(response){
+                if(response.status === 'connected') {
+                    FB.api('/me', function(response) {
+                        console.log(response);
+                    });
+                }
+            });
+          }
+
+          function fbLogout(){
+            FB.getLoginStatus(function (response) {
+                if (response.authResponse) {
+                   window.location = "https://www.facebook.com/logout.php?next=" +
+                     'https://sleepy-meadow-98391.herokuapp.com/' +
+                     "&access_token=" + response.authResponse.accessToken;
+                }
+              });
+          }
+        </script>
+
         <div class="row">
             <h1 class="header__title">CMPE272 Team Project</h1>
             <div style="width:100%; position: absolute; right: 0; bottom: 0;"><div style="width:100%; position: relative;">
@@ -163,7 +212,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <span id="accGoogle">LogIn with Google</span>
                                 </button>
 
-                                <button type="button" title="SignUp with Google">
+                                <button type="button" title="SignUp with Facebook" onclick="fbLogin()">
                                     <span><i class="fab fa-facebook-f"></i></span>
                                     <span id="accFacebook">LogIn with Facebook</span>
                                 </button>
@@ -210,20 +259,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <!-- <div class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div> -->
                                 </div>
                                 
-                                <form class="form-content">
+                                <form class="form-content" role="form" action="login.php" method="post">
                                     <div class="input-field">
-                                        <input type="text" id="userName" required="required" class="txtField"  placeholder="&#xf007; Username"/>
+                                        <input type="text" id="userName" name="username" required="required" class="txtField"  placeholder="&#xf007; Username"/>
                                         <span class="underLine"></span>
                                     </div>
                                     
                                     <div class="input-field">
-                                        <input type="password" required="required" class="txtField" placeholder="&#xf084; Password"/>
+                                        <input type="password" name="password" required="required" class="txtField" placeholder="&#xf084; Password"/>
                                         <span class="underLine"></span>
                                     </div>
                                     
                                     <div class="form-footer">
-                                        <button class="submit-btn" type="button">LogIn</button>
-                                        <a href="" title="Forgot Password ?">Forgot Password ?</a>                         
+                                        <button class="submit-btn" name="submit" type="submit" value="submit">LogIn</button>   
+                                        <a href="" title="Forgot Password ?">Forgot Password ?</a>                      
                                     </div>    
                                 </form>
                                 
