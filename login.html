@@ -56,9 +56,13 @@
           }
 
           function fbLogout(){
-            FB.logout(function(response) {
-              // user is now logged out
-            });
+            FB.getLoginStatus(function (response) {
+                if (response.authResponse) {
+                   window.location = "https://www.facebook.com/logout.php?next=" +
+                     'https://sleepy-meadow-98391.herokuapp.com/' +
+                     "&access_token=" + response.authResponse.accessToken;
+                }
+              });
           }
         </script>
         <div class="row">
