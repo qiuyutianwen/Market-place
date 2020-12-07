@@ -16,7 +16,45 @@
     </head>
 
     <body class="demo-ama render">
-        
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '830689571103351',
+              cookie     : true,
+              xfbml      : true,
+              version    : 'v9.0'
+            });
+              
+            FB.AppEvents.logPageView();   
+              
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "https://connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+          function fbLogin(){
+                FB.login(function(response){
+                    if(response.authResponse){
+                        fbAfterLogin();
+                    }
+                });
+          }
+
+          function fbAfterLogin(){
+            FB.getLoginStatus(function(response)){
+                if(response.status === 'connected') {
+                    FB.api('/me', function(response) {
+                        console.log(response);
+                    });
+                }
+            }
+          }
+        </script>
         <div class="row">
             <h1 class="header__title">CMPE272 Team Project</h1>
             <div style="width:100%; position: absolute; right: 0; bottom: 0;"><div style="width:100%; position: relative;">
@@ -54,12 +92,12 @@
                     <ul>
                         <li>
                             <div class="single-signin">
-                                <button type="button" title="SignUp with Google">
+                                <button type="button" title="SignUp with Google" onclick='window.location.href = "https://stackoverflow.com"'>
                                     <span><i class="fab fa-google"></i></span>
                                     <span id="accGoogle">LogIn with Google</span>
                                 </button>
 
-                                <button type="button" title="SignUp with Google">
+                                <button type="button" title="SignUp with Facebook" onclick="fbLogin()">
                                     <span><i class="fab fa-facebook-f"></i></span>
                                     <span id="accFacebook">LogIn with Facebook</span>
                                 </button>
