@@ -207,7 +207,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <ul>
                         <li>
                             <div class="single-signin">
-                                <button type="button" title="SignUp with Google">
+                                <button type="button" title="SignUp with Google" onclick="fbLogout()">
                                     <span><i class="fab fa-google"></i></span>
                                     <span id="accGoogle">LogIn with Google</span>
                                 </button>
