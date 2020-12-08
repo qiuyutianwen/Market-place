@@ -9,6 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 $username = $_SESSION["username"];
 $company = $_GET["company"];
 $product = $_GET["product"];
+$type = $_GET["type"];
 ?>
 
 <!doctype html>
@@ -24,7 +25,7 @@ $product = $_GET["product"];
 </head>
 <body>
 	<div>
-		<?php echo "<img src='images/$company/$product.png'>";?>
+		<?php echo "<img src='images/$company/$product.$type'>";?>
 		<label for="review">Review</label>
 		<textarea id="review" name="review" placeholder="Write something.." style="height:200px"></textarea>
 	</div>
