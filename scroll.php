@@ -392,106 +392,106 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 					</div>
 				</div>
 				<div class="heading" id = "heading6" style="z-index: 7">
-					That's it, thank you for scrolling! :)
+					Jing Xue
 					<div class="container demo-3">
 						<ul class="grid cs-style-3">
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p1.jpg" alt="img01">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p1&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/vrset.php?id=vrset">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p2.jpg" alt="img02">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p2&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/disney.php?id=disney">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p3.jpg" alt="img03">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p3&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/yellowStone.php?id=yellowStone">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p4.jpg" alt="img04">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p4&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/yosemite.php?id=yosemite">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p5.jpg" alt="img05">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p5&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/paris.php?id=paris">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p6.jpg" alt="img06">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p6&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/manhattan.php?id=manhattan">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p7.jpg" alt="img07">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p7&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/bora.php?id=bora">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p8.jpg" alt="img08">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p8&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/dubai.php?id=dubai">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p9.jpg" alt="img09">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p9&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/tokyo.php?id=tokyo">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/jingxue/p10.jpg" alt="img10">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=jingxue&product=p10&type=jpg" style="bottom: 50px">Review</a>
+										<a href="http://thesnowview.com/products/tahiti.php?id=tahiti">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
@@ -499,7 +499,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 					</div>
 				</div>
 				<div class="heading" id = "heading7" style="z-index: 7">
-					That's it, thank you for scrolling! :)
+					Yiru Sun
 					<div class="container demo-3">
 						<ul class="grid cs-style-3">
 							<li>
