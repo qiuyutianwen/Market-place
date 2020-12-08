@@ -285,106 +285,106 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 					</div>
 				</div>
 				<div class="heading" id = "heading5" style="z-index: 7">
-					That's it, thank you for scrolling! :)
+					Bo An
 					<div class="container demo-3">
 						<ul class="grid cs-style-3">
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p1.jpg" alt="img01">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p1&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model1.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p2.jpg" alt="img02">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p2&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model2.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p3.jpg" alt="img03">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p3&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model3.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p4.png" alt="img04">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p4&type=png" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model4.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p5.jpg" alt="img05">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p5&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model5.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p6.jpg" alt="img06">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p6&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model6.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p7.jpg" alt="img07">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p7&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model7.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p8.jpg" alt="img08">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p8&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model8.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p9.jpg" alt="img09">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p9&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model9.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/anbo/p10.jpg" alt="img10">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=anbo&product=p10&type=jpg" style="bottom: 50px">Review</a>
+										<a href="https://ismondaytmr.com/product/model10.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
