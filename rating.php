@@ -24,7 +24,7 @@ $product = $_GET["product"];
 </head>
 <body>
 	<div>
-		<?php echo "<img src="images/$company/$product.png">";?>
+		<?php echo "<img src='images/$company/$product.png'>";?>
 		<img src="images/yuqiu/p6.png">
 		<label for="review">Review</label>
 		<textarea id="review" name="review" placeholder="Write something.." style="height:200px"></textarea>
