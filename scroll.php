@@ -79,7 +79,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p1.png" alt="img01">
 									<figcaption>
 										<h3>Product 1</h3>
-										<a href="test.php?company=yuqiu&product=p1" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p1" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p1.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -89,7 +89,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p2.png" alt="img02">
 									<figcaption>
 										<h3>Product 2</h3>
-										<a href="test.php?company=yuqiu&product=p2" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p2" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p2.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -99,7 +99,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p3.png" alt="img03">
 									<figcaption>
 										<h3>Product 3</h3>
-										<a href="test.php?company=yuqiu&product=p3" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p3" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p3.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -109,7 +109,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p4.png" alt="img04">
 									<figcaption>
 										<h3>Product 4</h3>
-										<a href="test.php?company=yuqiu&product=p4" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p4" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p4.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -119,7 +119,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p5.jpg" alt="img05">
 									<figcaption>
 										<h3>Product 5</h3>
-										<a href="test.php?company=yuqiu&product=p5" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p5" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p5.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -129,7 +129,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p6.png" alt="img06">
 									<figcaption>
 										<h3>Product 6</h3>
-										<a href="test.php?company=yuqiu&product=p6" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p6" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p6.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -139,7 +139,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p7.png" alt="img07">
 									<figcaption>
 										<h3>Product 7</h3>
-										<a href="test.php?company=yuqiu&product=p7" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p7" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p7.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -149,7 +149,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p8.jpg" alt="img08">
 									<figcaption>
 										<h3>Product 8</h3>
-										<a href="test.php?company=yuqiu&product=p8" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p8" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p8.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -159,7 +159,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p9.jpg" alt="img09">
 									<figcaption>
 										<h3>Product 9</h3>
-										<a href="test.php?company=yuqiu&product=p9" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p9" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p9.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -169,7 +169,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<img src="images/yuqiu/p10.jpg" alt="img10">
 									<figcaption>
 										<h3>Product 10</h3>
-										<a href="test.php?company=yuqiu&product=p10" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p10" style="bottom: 50px">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p10.php">Take a look</a>
 									</figcaption>
 								</figure>
