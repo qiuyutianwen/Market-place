@@ -48,30 +48,127 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<div class="frame">
 				
 				<div class="frame__title-wrap">
-					<h1 class="frame__title">WebGL Transitions on Scroll</h1>
+					<h1 class="frame__title">Welcome, username</h1>
 
 				</div>
 				<a class="frame__github" href="https://github.com/vaneenige/scroll-transitions-webgl">GitHub</a>
 				<div class="frame__links">
-					<a href="https://tympanus.net/Development/SVGImageHover/">Previous Demo</a>
-					<a href="https://tympanus.net/codrops/?p=38923">Article</a>
+					<a href="https://tympanus.net/codrops/?p=38923">Log Out</a>
 				</div>
 			</div>
 			<div class="content content--canvas">
-				<div class="header">
-					<h1 class="header__title">Phenomenon</h1>
-					<p class="header__text">WebGL based transitions on scroll</p>
+				<div class="header" style="z-index: 1">
+					<h1 class="header__title">Fancy Market</h1>
+					<p class="header__text">Welcome to out fancy market.</p>
 
 				</div>
 				
-				<div class="heading">
-					A tiny wrapper around three.js built for high-performance WebGL experiences.
+				<div class="heading" style="z-index: 2">
+					Top 5 most visited products.
+					
 				</div>
-				<div class="heading">
-					GPU based for smooth transitions like scale, rotation and movement.
+				<div class="heading" style="z-index: 3">
+					Top 5 highest average rating.
 				</div>
-				<div class="heading">Modify default geometry and material for infinite possibilities.</div>
-				<div class="heading">
+				<div class="heading" id = "heading3" style="z-index: 8">
+					Yu Qiu
+					<div class="container demo-3">
+						<ul class="grid cs-style-3">
+							<li>
+								<figure>
+									<img src="images/yuqiu/p1.png" alt="img01">
+									<figcaption>
+										<h3>Product 1</h3>
+										<a href="test.php?company=yuqiu$product=p1" style="bottom: 50px">Review</a>
+										<a href="http://vast-cove-29148.herokuapp.com/p1.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p2.png" alt="img02">
+									<figcaption>
+										<h3>Product 2</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p2.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p3.png" alt="img03">
+									<figcaption>
+										<h3>Product 3</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p3.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p4.png" alt="img04">
+									<figcaption>
+										<h3>Product 4</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p4.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p5.jpg" alt="img05">
+									<figcaption>
+										<h3>Product 5</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p5.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p6.png" alt="img06">
+									<figcaption>
+										<h3>Product 6</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p6.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p7.png" alt="img07">
+									<figcaption>
+										<h3>Product 7</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p7.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p8.jpg" alt="img08">
+									<figcaption>
+										<h3>Product 8</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p8.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p9.jpg" alt="img09">
+									<figcaption>
+										<h3>Product 9</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p9.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/yuqiu/p10.jpg" alt="img10">
+									<figcaption>
+										<h3>Product 10</h3>
+										<a href="http://vast-cove-29148.herokuapp.com/p10.php">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="heading" id = "heading4" style="z-index: 7">
 					That's it, thank you for scrolling! :)
 					<div class="container demo-3">
 						<ul class="grid cs-style-3">
@@ -178,10 +275,352 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						</ul>
 					</div>
 				</div>
+				<div class="heading" id = "heading5" style="z-index: 7">
+					That's it, thank you for scrolling! :)
+					<div class="container demo-3">
+						<ul class="grid cs-style-3">
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="heading" id = "heading6" style="z-index: 7">
+					That's it, thank you for scrolling! :)
+					<div class="container demo-3">
+						<ul class="grid cs-style-3">
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="heading" id = "heading7" style="z-index: 7">
+					That's it, thank you for scrolling! :)
+					<div class="container demo-3">
+						<ul class="grid cs-style-3">
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<img src="images/4.png" alt="img04">
+									<figcaption>
+										<h3>Settings</h3>
+										<span>Jacob Cummings</span>
+										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+									</figcaption>
+								</figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
 			</div>
 
 			
 		</main>
+		<script>
+			function monitorHeading () {
+			    var h_array = document.querySelectorAll("div.heading");
+			    var i;
+			    var z_index_array = [];
+				for (i = 0; i < h_array.length; i++) {
+					z_index_array.push(h_array[i].style["z-index"]);
+				}
+			    var max_of_z_index = Math.max.apply(Math, z_index_array) + 1;
+			    for (i = 0; i < h_array.length; i++) {
+					if(h_array[i].style.opacity !== "0")
+					{
+						h_array[i].style["z-index"] = max_of_z_index;
+					}
+				}
+			}
+			    
+			//--- 150 is a good compromise between UI response and browser load.
+			window.setInterval (monitorHeading, 1000);
+		</script>
 		<script src="JS/ScriptLoginForm.js"></script>
 		<script src="JS/toucheffects.js"></script>
 		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
