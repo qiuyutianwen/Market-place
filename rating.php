@@ -1,3 +1,16 @@
+<?php
+session_start();
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("Location: /login.php");
+    exit;
+}
+$username = $_SESSION["username"];
+$company = $_GET["company"];
+$product = $_GET["product"];
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +24,8 @@
 </head>
 <body>
 	<div>
-		<img src="images/yuqiu/p6.png" alt="img06">
+		<?php echo "<img src="images/$company/$product.png">";?>
+		<img src="images/yuqiu/p6.png">
 		<label for="review">Review</label>
 		<textarea id="review" name="review" placeholder="Write something.." style="height:200px"></textarea>
 	</div>
