@@ -178,106 +178,106 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 					</div>
 				</div>
 				<div class="heading" id = "heading4" style="z-index: 7">
-					Jing Xue
+					Dongmei Yin
 					<div class="container demo-3">
 						<ul class="grid cs-style-3">
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p1.png" alt="img01">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p1&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/JennieIvoryChunkyCardigan.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p2.png" alt="img02">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p2&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/LACECOLLARBLOUSE.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p3.png" alt="img03">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p3&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/BLACKBUTTONSHORTS.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p4.png" alt="img04">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p4&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/BLACKSLITMIDISKIRT.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p5.png" alt="img05">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p5&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/WHITEPUFFSLEEVEDRESS.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p6.png" alt="img06">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p6&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/BLACKZIPUPDRESS.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p7.png" alt="img07">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p7&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/CoralLongScarf.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p8.png" alt="img08">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p8&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/PinkSheerBowScrunchie.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p9.png" alt="img09">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p9&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/AngelTearEarrings.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/dongmeiyin/p10.png" alt="img10">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=dongmeiyin&product=p10&type=png" style="bottom: 50px">Review</a>
+										<a href="http://lyn272.net/BeadedNecklace.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
