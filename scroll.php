@@ -53,7 +53,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				</div>
 				<a class="frame__github" href="https://github.com/vaneenige/scroll-transitions-webgl">GitHub</a>
 				<div class="frame__links">
-					<a href="https://tympanus.net/codrops/?p=38923">Log Out</a>
+					<a href="logout.php">Log Out</a>
 				</div>
 			</div>
 			<div class="content content--canvas">
