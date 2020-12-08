@@ -59,7 +59,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<div class="content content--canvas">
 				<div class="header" style="z-index: 1">
 					<h1 class="header__title">Fancy Market</h1>
-					<p class="header__text">Welcome to out fancy market.</p>
+					<p class="header__text">Welcome to our fancy market.</p>
 
 				</div>
 				
