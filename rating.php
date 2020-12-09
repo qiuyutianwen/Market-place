@@ -14,8 +14,8 @@ $_SESSION["company"] = $company;
 $_SESSION["product"] = $product;
 require_once "config.php";
 
-if(isset($_POST['save']))
-{
+// if(isset($_POST['save']))
+// {
 // 	$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
 // 	$result = mysqli_query($link, $sql);
 // 	$visitTimes = "";
@@ -82,7 +82,7 @@ if(isset($_POST['save']))
 	} else {
 	  echo "0 results";
 	}
-}
+// }
 
 
 mysqli_close($link);
@@ -217,7 +217,7 @@ mysqli_close($link);
 		
 		function saveToTheDB(review) {
 			$.ajax({
-				url: "rating.php?company=yuqiu&product=p1&type=png",
+				url: "rating.php",
 				method: "POST",
 				data: {
 					'save': 1,
