@@ -649,13 +649,17 @@ $username = $_SESSION["username"];
 				  database: "heroku_ba414de4a9832ae"
 				});
 
-				con.connect(function(err) {
-				  if (err) throw err;
-				  con.query("SELECT visitTimes FROM visitTimes WHERE company = " + company + "AND product = " + product, function (err, result, fields) {
-				    if (err) throw err;
-				    alert(result);
+				var res = function(callback) {
+				  con.query("SELECT visitTimes FROM visitTimes WHERE company = " + company + "AND product = " + product, (err, result) => {
+				    if(err) {
+				      console.log(err);
+				      callback(err, null);
+				    }
+				    console.log(result);
+				    callback(null, result);
 				  });
-				});
+				};
+				alert(res);
 				// con.connect(function(err) {
 				//   if (err) throw err;
 				//   var sql = "UPDATE visitTimes SET company WHERE address = 'Valley 345'";
