@@ -63,13 +63,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 				</div>
 				
-				<div class="heading" style="z-index: 2">
-					Top 5 most visited products.
-					
-				</div>
-				<div class="heading" style="z-index: 3">
-					Top 5 highest average rating.
-				</div>
 				<div class="heading" id = "heading3" style="z-index: 8">
 					Yu Qiu
 					<div class="container demo-3">
@@ -605,7 +598,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						</ul>
 					</div>
 				</div>
-				
+				<div class="heading" style="z-index: 2">
+					Top 5 most visited products.
+					<div class="chart_container" style="background-color:#000"><canvas id="myChart" width="100" height="100"></canvas></div>
+					
+				</div>
+				<div class="heading" style="z-index: 3">
+					Top 5 highest average rating.
+					<div class="chart_container" style="background-color:#000"><canvas id="myChart" width="100" height="100"></canvas></div>
+				</div>
 			</div>
 
 			
@@ -629,6 +630,43 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			    
 			//--- 150 is a good compromise between UI response and browser load.
 			window.setInterval (monitorHeading, 1000);
+		</script>
+		<script>
+			var ctx = document.getElementById("myChart");
+			var myChart = new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+			        labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+			        datasets: [{
+			            label: '# of Votes',
+			            data: [12, 19, 3, 5, 2],
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)',
+			                'rgba(255, 206, 86, 0.2)',
+			                'rgba(75, 192, 192, 0.2)',
+			                'rgba(153, 102, 255, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(153, 102, 255, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			});
 		</script>
 		<script src="JS/ScriptLoginForm.js"></script>
 		<script src="JS/toucheffects.js"></script>
