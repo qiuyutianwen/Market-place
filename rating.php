@@ -17,15 +17,16 @@ require_once "config.php";
 
 $sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
 $result = mysqli_query($link, $sql);
-
+$visitTimes = "";
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
-    echo "visitTimes: " . $row["visitTimes"];
+    $visitTimes =  $row["visitTimes"];
   }
 } else {
   echo "0 results";
 }
+echo "visitTimes: " . $visitTimes;
 // $sql = "UPDATE visitTimes SET visitTimes ='Doe' WHERE id=2";
 
 // if (mysqli_query($link, $sql)) {
