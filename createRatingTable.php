@@ -20,20 +20,20 @@ $sql2 = "CREATE TABLE rating (
 )";
 
 if (mysqli_query($link, $sql2)) {
-  echo "Table visitTimes created successfully";
+  echo "Table rating created successfully";
 } else {
   echo "Error creating table: " . mysqli_error($link);
 }
 
 //initialize data
 $sql3 = "INSERT INTO rating (company, product, username, review, rating)
-VALUES ('yuqiu', 'p1', 'qwer@gmail.com', 'Great!', '5');";
+VALUES ('yuqiu', 'p1', 'qwer@gmail.com', 'Great! I like it very much.', '5');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
-VALUES ('yuqiu', 'p1', 'qwe@gmail.com', 'Good!', '4');";
+VALUES ('yuqiu', 'p1', 'qwe@gmail.com', 'Good! I like it!', '4');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
 VALUES ('yuqiu', 'p1', 'qwert@gmail.com', 'Good!', '4');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
-VALUES ('yuqiu', 'p1', 'qwertu@gmail.com', 'Great!', '5');";
+VALUES ('yuqiu', 'p1', 'qwertu@gmail.com', 'Great! That is what I expected!', '5');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
 VALUES ('yuqiu', 'p1', 'qwer@gmail.com', 'Good!', '4');";
 
