@@ -11,12 +11,21 @@ $company = $_GET["company"];
 $product = $_GET["product"];
 $type = $_GET["type"];
 
+echo $company;
+echo $product;
 require_once "config.php";
 
 $sql = "SELECT visitTimes FROM visitTimes WHERE company = " . $company . "AND product = " . $product;
 $result = mysqli_query($link, $sql);
 
-echo "<h1>$result</h1>";
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "visitTimes: " . $row["visitTimes"];
+  }
+} else {
+  echo "0 results";
+}
 // $sql = "UPDATE visitTimes SET visitTimes ='Doe' WHERE id=2";
 
 // if (mysqli_query($link, $sql)) {
