@@ -19,7 +19,6 @@ $username = $_SESSION["username"];
 		<link rel="stylesheet" type="text/css" href="CSS/base.css" />
 		<link rel="stylesheet" type="text/css" href="CSS/default.css" />
 		<link rel="stylesheet" type="text/css" href="CSS/component.css" />
-        <link rel="stylesheet" href="CSS/StyleLoginForm.css"/> 
 		<script>
 			document.documentElement.className = 'js';
 			var supportsCssVars = function() {
@@ -598,13 +597,13 @@ $username = $_SESSION["username"];
 				</div>
 				<div class="heading" style="z-index: 2">
 					<div style="position:absolute; top: 100px">
-					<h5 style="top: 100px; width: 500px"> Top 5 most visited products.</h5>
+					<h5 style="top: 100px; width: 600px"> Top 5 most visited products.</h5>
 					<canvas id="myChart1" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
 					</div>
 				</div>
 				<div class="heading" style="z-index: 3">
 					<div style="position:absolute; top: 100px">
-					<h5 style="top: 100px; width: 500px"> Top 5 highest average rating.</h5>
+					<h5 style="top: 100px; width: 600px"> Top 5 highest average rating.</h5>
 					<canvas id="myChart2" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
 					</div>
 				</div>
