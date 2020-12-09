@@ -14,7 +14,7 @@ $_SESSION["company"] = $company;
 $_SESSION["product"] = $product;
 require_once "config.php";
 
-if(!isset($POST['save']))
+if(!isset($_POST['save']))
 {
 	$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
 	$result = mysqli_query($link, $sql);
@@ -63,6 +63,7 @@ if(!isset($POST['save']))
 	echo $_POST['review'];
 	echo $_POST['ratedIndex']."<br>";
 	$rating = $_POST['ratedIndex'] + 1;
+	echo "rating: ".$rating."<br>";
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $rating . "');";
 
 	if (mysqli_query($link, $sql)) {
@@ -188,7 +189,6 @@ mysqli_close($link);
 				ratedIndex = parseInt($(this).data('index'));
 				localStorage.setItem('ratedIndex', ratedIndex);
 				var review = $.trim($("#comment").val());
-				alert(review);
 				saveToTheDB(review);
 			});
 
