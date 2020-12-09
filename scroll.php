@@ -48,7 +48,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<div class="frame">
 				
 				<div class="frame__title-wrap">
-					<h1 class="frame__title">Welcome, username</h1>
+					<?php echo "<h1 class='frame__title'>Welcome, $_SESSION['username']</h1>"?>
+					
 
 				</div>
 				<a class="frame__github" href="https://github.com/vaneenige/scroll-transitions-webgl">GitHub</a>
@@ -599,13 +600,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 					</div>
 				</div>
 				<div class="heading" style="z-index: 2">
-					Top 5 most visited products.
-					<div class="chart_container" style="background-color:#000"><canvas id="myChart" width="100" height="100"></canvas></div>
-					
+					<div style="position:absolute; top: 100px">
+					<h5 style="top: 100px; width: 500px"> Top 5 most visited products.</h5>
+					<canvas id="myChart1" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
+					</div>
 				</div>
 				<div class="heading" style="z-index: 3">
-					Top 5 highest average rating.
-					<div class="chart_container" style="background-color:#000"><canvas id="myChart" width="100" height="100"></canvas></div>
+					<div style="position:absolute; top: 100px">
+					<h5 style="top: 100px; width: 500px"> Top 5 highest average rating.</h5>
+					<canvas id="myChart2" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
+					</div>
 				</div>
 			</div>
 
@@ -631,15 +635,60 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			//--- 150 is a good compromise between UI response and browser load.
 			window.setInterval (monitorHeading, 1000);
 		</script>
+		<script src="js/bundle.umd.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 		<script>
-			var ctx = document.getElementById("myChart");
+			var ctx = document.getElementById("myChart1");
+			var company = "yuqiu";
+			var product = "p1";
+			var p1 = company + "-" + product;
 			var myChart = new Chart(ctx, {
 			    type: 'bar',
 			    data: {
-			        labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+			        labels: [p1, "Blue", "Yellow", "Green", "Purple"],
 			        datasets: [{
-			            label: '# of Votes',
-			            data: [12, 19, 3, 5, 2],
+			            label: 'Avg rating',
+			            data: [4.1, 3.8, 4.5, 4.9, 4.7],
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)',
+			                'rgba(255, 206, 86, 0.2)',
+			                'rgba(75, 192, 192, 0.2)',
+			                'rgba(153, 102, 255, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(153, 102, 255, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			});
+		</script>
+		<script>
+			var ctx = document.getElementById("myChart2");
+			var company = "yuqiu";
+			var product = "p1";
+			var p1 = company + "-" + product;
+			var myChart = new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+			        labels: [p1, "Blue", "Yellow", "Green", "Purple"],
+			        datasets: [{
+			            label: 'Avg rating',
+			            data: [4.1, 3.8, 4.5, 4.9, 4.7],
 			            backgroundColor: [
 			                'rgba(255, 99, 132, 0.2)',
 			                'rgba(54, 162, 235, 0.2)',
@@ -673,6 +722,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
 		<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-		<script src="JS/bundle.umd.js"></script>
+		
 	</body>
 </html>
