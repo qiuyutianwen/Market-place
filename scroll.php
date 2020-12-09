@@ -494,101 +494,101 @@ $username = $_SESSION["username"];
 						<ul class="grid cs-style-3">
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p1.png" alt="img01">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p1&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/self_review.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p2.png" alt="img02">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p2&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/peer_review.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p3.png" alt="img03">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p3&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/manager_review.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p4.png" alt="img04">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p4&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/subordinate_review.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p5.png" alt="img05">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p5&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/adjust_salary.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p6.png" alt="img06">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p6&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/weekly_committed_times.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p7.png" alt="img07">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p7&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/send_warning.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p8.png" alt="img08">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p8&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/hr_meeting.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p9.png" alt="img09">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p9&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/fire.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
 							<li>
 								<figure>
-									<img src="images/4.png" alt="img04">
+									<img src="images/yirusun/p10.png" alt="img10">
 									<figcaption>
 										<h3>Settings</h3>
-										<span>Jacob Cummings</span>
-										<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+										<a href="rating.php?company=yirusun&product=p10&type=png" style="bottom: 50px">Review</a>
+										<a href="http://kumabaobao.com/service/add_new_employee.php">Take a look</a>
 									</figcaption>
 								</figure>
 							</li>
