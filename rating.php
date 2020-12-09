@@ -10,7 +10,8 @@ $username = $_SESSION["username"];
 $company = $_GET["company"];
 $product = $_GET["product"];
 $type = $_GET["type"];
-
+$_SESSION["company"] = $company;
+$_SESSION["product"] = $product;
 require_once "config.php";
 
 if(!isset($POST['save']))
@@ -49,9 +50,9 @@ if(!isset($POST['save']))
 	echo "visitTimes: " . $visitTimes . "<br>";
 } else {
 	echo $_POST['review'];
-	echo $_POST['rating']."<br>";
+	echo $_POST['ratedIndex']."<br>";
 	$rating = $_POST['ratedIndex'] + 1;
-	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $company . "', '" . $product . "', '" . $username . "', '" . $_POST['review'] . "', '" . $rating . "');";
+	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $rating . "');";
 
 	if (mysqli_query($link, $sql)) {
 	  echo "Record updated successfully";
@@ -198,7 +199,7 @@ mysqli_close($link);
 			});
 		});
 
-		var review = document.getElementById("review").value;
+		var review = $("#review").val();
 		function saveToTheDB() {
 			$.ajax({
 				url: "rating.php",
