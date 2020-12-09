@@ -641,6 +641,7 @@ $username = $_SESSION["username"];
 				var company = res_arr[0].split('=')[1];
 				var product = res_arr[1].split('=')[1];
 
+				alert(company);
 				var mysql = require('mysql');
 				var con = mysql.createConnection({
 				  host: "us-cdbr-east-02.cleardb.com",
