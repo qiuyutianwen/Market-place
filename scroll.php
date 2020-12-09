@@ -635,7 +635,7 @@ $username = $_SESSION['username'];
 			//--- 150 is a good compromise between UI response and browser load.
 			window.setInterval (monitorHeading, 1000);
 		</script>
-		<script src="js/bundle.umd.js"></script>
+		
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 		<script>
 			var ctx = document.getElementById("myChart1");
@@ -722,6 +722,6 @@ $username = $_SESSION['username'];
 		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
 		<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-		
+		<script src="js/bundle.umd.js"></script>
 	</body>
 </html>
