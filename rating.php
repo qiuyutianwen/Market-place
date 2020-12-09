@@ -60,9 +60,9 @@ require_once "config.php";
 // 	  echo "0 results";
 // 	}
 // } else {
-	echo $_POST['review'];
-	echo $_POST['ratedIndex']."<br>";
-	$rating = $_POST['ratedIndex'] + 1;
+	echo json_encode($_POST['review']);
+	echo json_encode($_POST['ratedIndex'])."<br>";
+	$rating = json_encode($_POST['ratedIndex']) + 1;
 	echo "rating: ".$rating."<br>";
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $rating . "');";
 
