@@ -13,7 +13,7 @@ $sql2 = "CREATE TABLE visitTimes (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     company VARCHAR(50) NOT NULL,
     product VARCHAR(50) NOT NULL,
-    visitTimes INT NOT NULL,
+    visitTimes INT(10) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 
@@ -25,109 +25,109 @@ if (mysqli_query($link, $sql2)) {
 
 //initialize data
 $sql3 = "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p1', 0);";
+VALUES ('yuqiu', 'p1', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p2', 0);";
+VALUES ('yuqiu', 'p2', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p3', 0);";
+VALUES ('yuqiu', 'p3', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p4', 0);";
+VALUES ('yuqiu', 'p4', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p5', 0);";
+VALUES ('yuqiu', 'p5', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p6', 0);";
+VALUES ('yuqiu', 'p6', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p7', 0);";
+VALUES ('yuqiu', 'p7', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p8', 0);";
+VALUES ('yuqiu', 'p8', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p9', 0);";
+VALUES ('yuqiu', 'p9', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yuqiu', 'p10', 0);";
+VALUES ('yuqiu', 'p10', '0');";
 
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p1', 0);";
+VALUES ('dongmeiyin', 'p1', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p2', 0);";
+VALUES ('dongmeiyin', 'p2', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p3', 0);";
+VALUES ('dongmeiyin', 'p3', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p4', 0);";
+VALUES ('dongmeiyin', 'p4', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p5', 0);";
+VALUES ('dongmeiyin', 'p5', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p6', 0);";
+VALUES ('dongmeiyin', 'p6', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p7', 0);";
+VALUES ('dongmeiyin', 'p7', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p8', 0);";
+VALUES ('dongmeiyin', 'p8', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p9', 0);";
+VALUES ('dongmeiyin', 'p9', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('dongmeiyin', 'p10', 0);";
+VALUES ('dongmeiyin', 'p10', '0');";
 
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p1', 0);";
+VALUES ('anbo', 'p1', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p2', 0);";
+VALUES ('anbo', 'p2', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p3', 0);";
+VALUES ('anbo', 'p3', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p4', 0);";
+VALUES ('anbo', 'p4', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p5', 0);";
+VALUES ('anbo', 'p5', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p6', 0);";
+VALUES ('anbo', 'p6', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p7', 0);";
+VALUES ('anbo', 'p7', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p8', 0);";
+VALUES ('anbo', 'p8', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p9', 0);";
+VALUES ('anbo', 'p9', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('anbo', 'p10', 0);";
+VALUES ('anbo', 'p10', '0');";
 
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p1', 0);";
+VALUES ('jingxue', 'p1', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p2', 0);";
+VALUES ('jingxue', 'p2', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p3', 0);";
+VALUES ('jingxue', 'p3', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p4', 0);";
+VALUES ('jingxue', 'p4', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p5', 0);";
+VALUES ('jingxue', 'p5', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p6', 0);";
+VALUES ('jingxue', 'p6', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p7', 0);";
+VALUES ('jingxue', 'p7', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p8', 0);";
+VALUES ('jingxue', 'p8', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p9', 0);";
+VALUES ('jingxue', 'p9', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('jingxue', 'p10', 0);";
+VALUES ('jingxue', 'p10', '0');";
 
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p1', 0);";
+VALUES ('yirusun', 'p1', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p2', 0);";
+VALUES ('yirusun', 'p2', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p3', 0);";
+VALUES ('yirusun', 'p3', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p4', 0);";
+VALUES ('yirusun', 'p4', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p5', 0);";
+VALUES ('yirusun', 'p5', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p6', 0);";
+VALUES ('yirusun', 'p6', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p7', 0);";
+VALUES ('yirusun', 'p7', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p8', 0);";
+VALUES ('yirusun', 'p8', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p9', 0);";
+VALUES ('yirusun', 'p9', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
-VALUES ('yirusun', 'p10', 0);";
+VALUES ('yirusun', 'p10', '0');";
 if (mysqli_multi_query($conn, $sql)) {
   echo "New records created successfully";
 } else {
