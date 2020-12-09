@@ -46,8 +46,10 @@ if(!isset($POST['save']))
 	} else {
 	  echo "0 results";
 	}
-	echo "visitTimes: " . $visitTimes;
+	echo "visitTimes: " . $visitTimes . "<br>";
 } else {
+	echo $_POST['review'];
+	echo $_POST['rating']."<br>";
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $company . "', '" . $product . "', '" . $username . "', '" . $_POST['review'] . "', '" . $_POST['rating'] . "');";
 
 	if (mysqli_query($link, $sql)) {
