@@ -11,42 +11,64 @@ $company = $_GET["company"];
 $product = $_GET["product"];
 $type = $_GET["type"];
 
-echo $company;
-echo $product;
 require_once "config.php";
 
-$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
-$result = mysqli_query($link, $sql);
-$visitTimes = "";
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    $visitTimes =  $row["visitTimes"];
-  }
-} else {
-  echo "0 results";
-}
-echo "visitTimes: " . $visitTimes;
-$new_vt = (int)$visitTimes + 1;
-$sql = "UPDATE visitTimes SET visitTimes = '" .$new_vt . "' WHERE company = '" . $company . "' AND product = '" . $product . "';";
+if(!isset($POST['save']))
+{
+	$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
+	$result = mysqli_query($link, $sql);
+	$visitTimes = "";
+	if (mysqli_num_rows($result) > 0) {
+	  // output data of each row
+	  while($row = mysqli_fetch_assoc($result)) {
+	    $visitTimes =  $row["visitTimes"];
+	  }
+	} else {
+	  echo "0 results";
+	}
+	echo "visitTimes: " . $visitTimes;
+	$new_vt = (int)$visitTimes + 1;
+	$sql = "UPDATE visitTimes SET visitTimes = '" .$new_vt . "' WHERE company = '" . $company . "' AND product = '" . $product . "';";
 
-if (mysqli_query($link, $sql)) {
-  echo "Record updated successfully";
+	if (mysqli_query($link, $sql)) {
+	  echo "Record updated successfully";
+	} else {
+	  echo "Error updating record: " . mysqli_error($link);
+	}
+	$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
+	$result = mysqli_query($link, $sql);
+	$visitTimes = "";
+	if (mysqli_num_rows($result) > 0) {
+	  // output data of each row
+	  while($row = mysqli_fetch_assoc($result)) {
+	    $visitTimes =  $row["visitTimes"];
+	  }
+	} else {
+	  echo "0 results";
+	}
+	echo "visitTimes: " . $visitTimes;
 } else {
-  echo "Error updating record: " . mysqli_error($link);
+	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $company . "', '" . $product . "', '" . $username . "', '" . $_POST['review'] . "', '" . $_POST['rating'] . "');";
+
+	if (mysqli_query($link, $sql)) {
+	  echo "Record updated successfully";
+	} else {
+	  echo "Error updating record: " . mysqli_error($link);
+	}
+
+	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $company . "' AND product = '" . $product . "';";
+	$result = mysqli_query($link, $sql);
+	if (mysqli_num_rows($result) > 0) {
+	  // output data of each row
+	  while($row = mysqli_fetch_assoc($result)) {
+	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
+	  }
+	} else {
+	  echo "0 results";
+	}
 }
-$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
-$result = mysqli_query($link, $sql);
-$visitTimes = "";
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    $visitTimes =  $row["visitTimes"];
-  }
-} else {
-  echo "0 results";
-}
-echo "visitTimes: " . $visitTimes;
+
+
 mysqli_close($link);
 ?>
 
@@ -148,6 +170,7 @@ mysqli_close($link);
 			$('.fa-star').on('click', function() {
 				ratedIndex = parseInt($(this).data('index'));
 				localStorage.setItem('ratedIndex', ratedIndex);
+				saveToTheDB();
 			});
 
 			$('.fa-star').mouseover(function() {
@@ -169,9 +192,24 @@ mysqli_close($link);
 						$('.fa-star:eq('+i+')').css('color', 'yellow');
 					}
 				}
-			})
+			});
 		});
 
+		var review = document.getElementById("review").value;
+		function saveToTheDB() {
+			$.ajax({
+				url: "rating.php",
+				method: "POST",
+				dataType: 'json',
+				data: {
+					save: 1,
+					ratedIndex: ratedIndex,
+					review: review
+				}, success: function(r) {
+					console.log(r);
+				}
+			});
+		}
 		function resetStarColors(){
 			$('.fa-star').css('color', 'white');
 		}
