@@ -2,7 +2,7 @@
 require_once "config.php";
 
 // sql to create table
-$sql = "CREATE TABLE users (
+$sql = "CREATE TABLE visitTimes (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     company VARCHAR(50) NOT NULL,
     product VARCHAR(50) NOT NULL,
