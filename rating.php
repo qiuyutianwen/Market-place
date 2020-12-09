@@ -50,7 +50,8 @@ if(!isset($POST['save']))
 } else {
 	echo $_POST['review'];
 	echo $_POST['rating']."<br>";
-	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $company . "', '" . $product . "', '" . $username . "', '" . $_POST['review'] . "', '" . $_POST['rating'] . "');";
+	$rating = $_POST['ratedIndex'] + 1;
+	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $company . "', '" . $product . "', '" . $username . "', '" . $_POST['review'] . "', '" . $rating . "');";
 
 	if (mysqli_query($link, $sql)) {
 	  echo "Record updated successfully";
