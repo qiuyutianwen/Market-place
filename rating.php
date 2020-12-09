@@ -15,7 +15,7 @@ echo $company;
 echo $product;
 require_once "config.php";
 
-$sql = "SELECT visitTimes FROM visitTimes WHERE company = " . $company . "AND product = " . $product;
+$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
 $result = mysqli_query($link, $sql);
 
 if (mysqli_num_rows($result) > 0) {
