@@ -7,6 +7,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("Location: /login.php");
     exit;
 }
+
+$username = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -48,9 +50,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<div class="frame">
 				
 				<div class="frame__title-wrap">
-					<?php echo "<h1 class='frame__title'>Welcome, $_SESSION['username']</h1>"?>
-					
-
+					<?php echo "<h1 class='frame__title'>Welcome, $username</h1>";?>
 				</div>
 				<a class="frame__github" href="https://github.com/vaneenige/scroll-transitions-webgl">GitHub</a>
 				<div class="frame__links">
