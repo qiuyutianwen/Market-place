@@ -719,6 +719,6 @@ $username = $_SESSION["username"];
 		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
 		<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-		<script src="js/bundle.umd.js"></script>
+		<script src="JS/bundle.umd.js"></script>
 	</body>
 </html>
