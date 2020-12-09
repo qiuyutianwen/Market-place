@@ -10,6 +10,20 @@ $username = $_SESSION["username"];
 $company = $_GET["company"];
 $product = $_GET["product"];
 $type = $_GET["type"];
+
+require_once "config.php";
+
+$sql = "SELECT visitTimes FROM visitTimes WHERE company = " . $company . "AND product = " . $product;
+$result = mysqli_query($link, $sql);
+
+echo $result;
+// $sql = "UPDATE visitTimes SET visitTimes ='Doe' WHERE id=2";
+
+// if (mysqli_query($link, $sql)) {
+//   echo "Record updated successfully";
+// } else {
+//   echo "Error updating record: " . mysqli_error($link);
+// }
 ?>
 
 <!doctype html>
