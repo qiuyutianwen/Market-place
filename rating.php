@@ -27,7 +27,7 @@ $type = $_GET["type"];
 	<div>
 		<?php echo "<img src='images/$company/$product.$type'>";?>
 		<label for="review">Review</label>
-		<textarea id="review" name="review" placeholder="Write something.." style="height:200px"></textarea>
+		<textarea id="review" name="review" placeholder="Write something.." style="height:200px" maxlength="255"></textarea>
 	</div>
 	<div align="center" style="background: #000; padding: 50px;">
 		<i class="fa fa-star fa-3x" data-index="0"></i>
