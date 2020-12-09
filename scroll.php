@@ -8,7 +8,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-$username = $_SESSION['username'];
+$username = $_SESSION["username"];
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -16,9 +16,6 @@ $username = $_SESSION['username'];
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Project</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Lato|Nanum+Gothic:700|Raleway&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="CSS/base.css" />
 		<link rel="stylesheet" type="text/css" href="CSS/default.css" />
 		<link rel="stylesheet" type="text/css" href="CSS/component.css" />
