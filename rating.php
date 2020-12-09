@@ -161,6 +161,7 @@ mysqli_close($link);
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script>
 		var ratedIndex = -1;
+		var review = $("#review").val();
 		$(document).ready(function() {
 			resetStarColors();
 
@@ -199,16 +200,16 @@ mysqli_close($link);
 			});
 		});
 
-		var review = $("#review").val();
+		
 		function saveToTheDB() {
 			$.ajax({
 				url: "rating.php",
 				method: "POST",
 				dataType: 'json',
 				data: {
-					save: 1,
-					ratedIndex: ratedIndex,
-					review: review
+					'save': 1,
+					'ratedIndex': ratedIndex,
+					'review': review
 				}, success: function(r) {
 					console.log(r);
 				}
