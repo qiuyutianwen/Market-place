@@ -69,7 +69,7 @@ $username = $_SESSION["username"];
 									<img src="images/yuqiu/p1.png" alt="img01">
 									<figcaption>
 										<h3>Product 1</h3>
-										<a href="rating.php?company=yuqiu&product=p1&type=png" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p1&type=png" style="bottom: 50px" onclick="theFunction(event)">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p1.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -79,7 +79,7 @@ $username = $_SESSION["username"];
 									<img src="images/yuqiu/p2.png" alt="img02">
 									<figcaption>
 										<h3>Product 2</h3>
-										<a href="rating.php?company=yuqiu&product=p2&type=png" style="bottom: 50px">Review</a>
+										<a href="rating.php?company=yuqiu&product=p2&type=png" style="bottom: 50px" onclick="theFunction(event)">Review</a>
 										<a href="http://vast-cove-29148.herokuapp.com/p2.php">Take a look</a>
 									</figcaption>
 								</figure>
@@ -632,6 +632,40 @@ $username = $_SESSION["username"];
 			window.setInterval (monitorHeading, 1000);
 		</script>
 		
+		<script>
+			function theFunction(e)
+			{ 
+				var href = e.target.href;
+				var variable = href.split('?');
+				var res_arr = variable[1].split('&');
+				var company = res_arr[0].split('=')[1];
+				var product = res_arr[1].split('=')[1];
+
+				var mysql = require('mysql');
+				var con = mysql.createConnection({
+				  host: "us-cdbr-east-02.cleardb.com",
+				  user: "bf38aba858b8c1",
+				  password: "2d895be4",
+				  database: "heroku_ba414de4a9832ae"
+				});
+
+				con.connect(function(err) {
+				  if (err) throw err;
+				  con.query("SELECT visitTimes FROM visitTimes WHERE company = " + company + "AND product = " + product, function (err, result, fields) {
+				    if (err) throw err;
+				    alert(result);
+				  });
+				});
+				// con.connect(function(err) {
+				//   if (err) throw err;
+				//   var sql = "UPDATE visitTimes SET company WHERE address = 'Valley 345'";
+				//   con.query(sql, function (err, result) {
+				//     if (err) throw err;
+				//     console.log(result.affectedRows + " record(s) updated");
+				//   });
+				// });
+			}
+		</script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 		<script>
 			var ctx = document.getElementById("myChart1");
