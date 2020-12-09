@@ -48,6 +48,17 @@ if(!isset($POST['save']))
 	  echo "0 results";
 	}
 	echo "visitTimes: " . $visitTimes . "<br>";
+
+	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
+	$result = mysqli_query($link, $sql);
+	if (mysqli_num_rows($result) > 0) {
+	  // output data of each row
+	  while($row = mysqli_fetch_assoc($result)) {
+	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
+	  }
+	} else {
+	  echo "0 results";
+	}
 } else {
 	echo $_POST['review'];
 	echo $_POST['ratedIndex']."<br>";
@@ -60,7 +71,7 @@ if(!isset($POST['save']))
 	  echo "Error updating record: " . mysqli_error($link);
 	}
 
-	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $company . "' AND product = '" . $product . "';";
+	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
 	$result = mysqli_query($link, $sql);
 	if (mysqli_num_rows($result) > 0) {
 	  // output data of each row
@@ -90,7 +101,7 @@ mysqli_close($link);
 <body>
 	<div>
 		<?php echo "<img src='images/$company/$product.$type'>";?>
-		<label for="review">Review</label>
+		<label>Review</label>
 		<textarea id="review" name="review" placeholder="Write something.." style="height:200px" maxlength="255"></textarea>
 	</div>
 	<div align="center" style="background: #000; padding: 50px;">
