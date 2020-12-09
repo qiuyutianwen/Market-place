@@ -16,7 +16,7 @@ require_once "config.php";
 $sql = "SELECT visitTimes FROM visitTimes WHERE company = " . $company . "AND product = " . $product;
 $result = mysqli_query($link, $sql);
 
-echo $result;
+echo "<h1>$result</h1>";
 // $sql = "UPDATE visitTimes SET visitTimes ='Doe' WHERE id=2";
 
 // if (mysqli_query($link, $sql)) {
@@ -24,6 +24,7 @@ echo $result;
 // } else {
 //   echo "Error updating record: " . mysqli_error($link);
 // }
+mysqli_close($link);
 ?>
 
 <!doctype html>
