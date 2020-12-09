@@ -597,16 +597,16 @@ $username = $_SESSION["username"];
 					</div>
 				</div>
 				<div class="heading" style="z-index: 2">
-					<!-- <div style="position:absolute; top: 100px">
+					<div style="position:absolute; top: 100px">
 					<h5 style="top: 100px; width: 500px"> Top 5 most visited products.</h5>
 					<canvas id="myChart1" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
-					</div> -->
+					</div>
 				</div>
 				<div class="heading" style="z-index: 3">
-					<!-- <div style="position:absolute; top: 100px">
+					<div style="position:absolute; top: 100px">
 					<h5 style="top: 100px; width: 500px"> Top 5 highest average rating.</h5>
 					<canvas id="myChart2" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
-					</div> -->
+					</div>
 				</div>
 			</div>
 
@@ -632,7 +632,7 @@ $username = $_SESSION["username"];
 			//--- 150 is a good compromise between UI response and browser load.
 			window.setInterval (monitorHeading, 1000);
 		</script>
-		<!-- 
+		
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 		<script>
 			var ctx = document.getElementById("myChart1");
@@ -713,8 +713,7 @@ $username = $_SESSION["username"];
 			        }
 			    }
 			});
-		</script> -->
-		<script src="JS/ScriptLoginForm.js"></script>
+		</script>
 		<script src="JS/toucheffects.js"></script>
 		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
