@@ -27,13 +27,26 @@ if (mysqli_num_rows($result) > 0) {
   echo "0 results";
 }
 echo "visitTimes: " . $visitTimes;
-// $sql = "UPDATE visitTimes SET visitTimes ='Doe' WHERE id=2";
+$new_vt = (int)$visitTimes + 1;
+$sql = "UPDATE visitTimes SET visitTimes = '" .$new_vt . "' WHERE company = '" . $company . "' AND product = '" . $product . "';";
 
-// if (mysqli_query($link, $sql)) {
-//   echo "Record updated successfully";
-// } else {
-//   echo "Error updating record: " . mysqli_error($link);
-// }
+if (mysqli_query($link, $sql)) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . mysqli_error($link);
+}
+$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
+$result = mysqli_query($link, $sql);
+$visitTimes = "";
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    $visitTimes =  $row["visitTimes"];
+  }
+} else {
+  echo "0 results";
+}
+echo "visitTimes: " . $visitTimes;
 mysqli_close($link);
 ?>
 
