@@ -128,10 +128,10 @@ $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
 VALUES ('yirusun', 'p9', '0');";
 $sql3 .= "INSERT INTO visitTimes (company, product, visitTimes)
 VALUES ('yirusun', 'p10', '0');";
-if (mysqli_multi_query($conn, $sql)) {
+if (mysqli_multi_query($link, $sql)) {
   echo "New records created successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  echo "Error: " . $sql . "<br>" . mysqli_error($link);
 }
 mysqli_close($link);
 ?>
