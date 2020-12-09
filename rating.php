@@ -102,7 +102,7 @@ mysqli_close($link);
 	<div>
 		<?php echo "<img src='images/$company/$product.$type'>";?>
 		<label>Review</label>
-		<textarea id="review" name="review" placeholder="Write something.." style="height:200px" maxlength="255"></textarea>
+		<textarea id="comment" placeholder="Write something.." style="height:200px" maxlength="255"></textarea>
 	</div>
 	<div align="center" style="background: #000; padding: 50px;">
 		<i class="fa fa-star fa-3x" data-index="0"></i>
@@ -172,7 +172,7 @@ mysqli_close($link);
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script>
 		var ratedIndex = -1;
-		var review = $.trim($("#review").val());
+		var review = $.trim($("#comment").val());
 
 		$(document).ready(function() {
 			resetStarColors();
