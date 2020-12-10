@@ -65,16 +65,16 @@ require_once "config.php";
 	// $rating++;
 	// echo "review: ".$escaped_review." ";
 	// echo "rating: ".$rating."<br>";
-// if(isset($_POST['save']))
-// {
-// 	$_POST['ratedIndex']++;
-// 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $_POST['ratedIndex'] . "');";
+if(isset($_POST['save']))
+{
+	$_POST['ratedIndex']++;
+	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $_POST['ratedIndex'] . "');";
 
-// 	if (mysqli_query($link, $sql)) {
-// 	  echo "Record updated successfully";
-// 	} else {
-// 	  echo "Error updating record: " . mysqli_error($link);
-// 	}
+	if (mysqli_query($link, $sql)) {
+	  echo "Record updated successfully";
+	} else {
+	  echo "Error updating record: " . mysqli_error($link);
+	}
 
 	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
 	$result = mysqli_query($link, $sql);
@@ -86,7 +86,18 @@ require_once "config.php";
 	} else {
 	  echo "0 results";
 	}
-// }
+} else {
+	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
+	$result = mysqli_query($link, $sql);
+	if (mysqli_num_rows($result) > 0) {
+	  // output data of each row
+	  while($row = mysqli_fetch_assoc($result)) {
+	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
+	  }
+	} else {
+	  echo "0 results";
+	}
+}
 
 
 mysqli_close($link);
