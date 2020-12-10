@@ -71,9 +71,10 @@ if(isset($_POST['save']))
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $_POST['ratedIndex'] . "');";
 
 	if (mysqli_query($link, $sql)) {
-	  echo "<script>
-    window.alert('Succesfully rated!');
-    window.location.href='https://sleepy-meadow-98391.herokuapp.com/rating.php?company=" .$_SESSION["company"] . "&product=" . $_SESSION["product"] . "&type=". $type."';</script>";
+	  // echo "<script>
+   //  window.alert('Succesfully rated!');
+   //  window.location.href='https://sleepy-meadow-98391.herokuapp.com/rating.php?company=" .$_SESSION["company"] . "&product=" . $_SESSION["product"] . "&type=". $type."';</script>";
+    	echo "<script>alert('Rating and review are succesfully uploaded!');</script>";
 	} else {
 	  echo "<script>
     window.alert('".mysqli_error($link)."');</script>";
