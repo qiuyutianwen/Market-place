@@ -19,8 +19,6 @@ if(isset($_POST['save']))
 	$re = mysqli_real_escape_string($link, $_POST['review']);
 	$ra = mysqli_real_escape_string($link, $_POST['ratedIndex']);
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $re . "', '" . $ra. "');";
-
-	echo "successfully post";
 	if (mysqli_query($link, $sql) === TRUE) {
     	echo "True";
 	} else {
