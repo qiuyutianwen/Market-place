@@ -232,7 +232,7 @@ mysqli_close($link);
 		
 		function saveToTheDB(review) {
 			$.ajax({
-				url: "rating.php?company=yuqiu&product=p1&type=png",
+				url: "rating.php",
 				method: "POST",
 				data: {
 					'save': 1,
