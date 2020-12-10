@@ -10,7 +10,6 @@ $username = $_SESSION["username"];
 $company = $_GET["company"];
 $product = $_GET["product"];
 $type = $_GET["type"];
-echo "<script>var c = $company; var p = $product; var t = $type;</script>";
 $_SESSION["company"] = $company;
 $_SESSION["product"] = $product;
 require_once "config.php";
@@ -230,6 +229,9 @@ mysqli_close($link);
 			});
 		});
 
+		var c = '<?php echo $company;?>';
+		var p = '<?php echo $product;?>';
+		var t = '<?php echo $type;?>';
 		var myurl="rating.php"+"?company="+c+"&product="+p+"&type="+t;
 		function saveToTheDB(review) {
 			$.ajax({
