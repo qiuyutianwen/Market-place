@@ -65,40 +65,16 @@ require_once "config.php";
 	// $rating++;
 	// echo "review: ".$escaped_review." ";
 	// echo "rating: ".$rating."<br>";
-if(isset($_POST['save']))
-{
-	$_POST['ratedIndex']++;
-	$re = mysqli_real_escape_string($link, $_POST['review']);
-	$ra = mysqli_real_escape_string($link, $_POST['ratedIndex']);
-	exit;
-	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $re . "', '" . $ra. "');";
-
-	echo "successfully post";
-	if (mysqli_query($link, $sql) === TRUE) {
-	  // echo "<script>
-   //  window.alert('Succesfully rated!');
-   //  window.location.href='https://sleepy-meadow-98391.herokuapp.com/rating.php?company=" .$_SESSION["company"] . "&product=" . $_SESSION["product"] . "&type=". $type."';</script>";
-    	echo "<script>alert('Rating and review are succesfully uploaded!');</script>";
-	} else {
-		$error = mysqli_error($link);
-	  echo "<script>alert('$error');</script>";
-	}
-} else {
 	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
 	$result = mysqli_query($link, $sql);
 	if (mysqli_num_rows($result) > 0) {
 	  // output data of each row
-
-		echo "<script>alert('records found!');</script>";
 	  while($row = mysqli_fetch_assoc($result)) {
 	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
 	  }
 	} else {
 	  echo "0 results";
 	}
-}
-
-
 mysqli_close($link);
 ?>
 
@@ -231,7 +207,8 @@ mysqli_close($link);
 		var c = '<?php echo $company;?>';
 		var p = '<?php echo $product;?>';
 		var t = '<?php echo $type;?>';
-		var myurl="rating.php"+"?company="+c+"&product="+p+"&type="+t;
+		var preurl = "rating.php"+"?company="+c+"&product="+p+"&type="+t;
+		var myurl="handleAjax.php"+"?company="+c+"&product="+p+"&type="+t;
 		function saveToTheDB(review) {
 			$.ajax({
 				url: myurl,
@@ -240,8 +217,15 @@ mysqli_close($link);
 					'save': 1,
 					'ratedIndex': ratedIndex,
 					'review': review
-				}, success: function(r) {
-					console.log(r);
+				}, success: function(data) {
+					console.log(data);
+					if(data == "True")
+					{
+						alert('Rating and review are succesfully uploaded!');
+						window.location.href=preurl;
+					}else{
+						alert(data);
+					}
 				}
 			});
 		}
