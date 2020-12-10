@@ -76,8 +76,8 @@ if(isset($_POST['save']))
    //  window.location.href='https://sleepy-meadow-98391.herokuapp.com/rating.php?company=" .$_SESSION["company"] . "&product=" . $_SESSION["product"] . "&type=". $type."';</script>";
     	echo "<script>alert('Rating and review are succesfully uploaded!');</script>";
 	} else {
-	  echo "<script>
-    window.alert('".mysqli_error($link)."');</script>";
+		$error = mysqli_error($link);
+	  echo "<script>alert('$error');</script>";
 	}
 } else {
 	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
