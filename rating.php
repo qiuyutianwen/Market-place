@@ -60,12 +60,12 @@ require_once "config.php";
 // 	  echo "0 results";
 // 	}
 // } else {
-	$escaped_review = mysqli_real_escape_string($link, $_POST['review']);
-	$rating = mysqli_real_escape_string($link, $_POST['ratedIndex']);
-	$rating++;
-	echo "review: ".$escaped_review." ";
-	echo "rating: ".$rating."<br>";
-	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $escaped_review . "', '" . $rating . "');";
+	// $escaped_review = mysqli_real_escape_string($link, $_POST['review']);
+	// $rating = mysqli_real_escape_string($link, $_POST['ratedIndex']);
+	// $rating++;
+	// echo "review: ".$escaped_review." ";
+	// echo "rating: ".$rating."<br>";
+	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $_POST['ratedIndex'] . "');";
 
 	if (mysqli_query($link, $sql)) {
 	  echo "Record updated successfully";
