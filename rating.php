@@ -10,6 +10,7 @@ $username = $_SESSION["username"];
 $company = $_GET["company"];
 $product = $_GET["product"];
 $type = $_GET["type"];
+echo "<script>var c = $company; var p = $product; var t = $type;</script>";
 $_SESSION["company"] = $company;
 $_SESSION["product"] = $product;
 require_once "config.php";
@@ -229,10 +230,10 @@ mysqli_close($link);
 			});
 		});
 
-		
+		var myurl="rating.php"+"?company="+c+"&product="+p+"&type="+t;
 		function saveToTheDB(review) {
 			$.ajax({
-				url: "rating.php",
+				url: myurl,
 				method: "POST",
 				data: {
 					'save': 1,
