@@ -65,6 +65,9 @@ require_once "config.php";
 	// $rating++;
 	// echo "review: ".$escaped_review." ";
 	// echo "rating: ".$rating."<br>";
+if(isset($_POST['save']))
+{
+	$_POST['ratedIndex']++;
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $_POST['ratedIndex'] . "');";
 
 	if (mysqli_query($link, $sql)) {
@@ -83,7 +86,7 @@ require_once "config.php";
 	} else {
 	  echo "0 results";
 	}
-// }
+}
 
 
 mysqli_close($link);
