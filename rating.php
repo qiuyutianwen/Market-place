@@ -60,11 +60,12 @@ require_once "config.php";
 // 	  echo "0 results";
 // 	}
 // } else {
-	echo json_encode($_POST['review']);
-	echo json_encode($_POST['ratedIndex'])."<br>";
-	$rating = json_encode($_POST['ratedIndex']) + 1;
+	$escaped_review = mysqli_real_escape_string($link, $_POST['review']);
+	$rating = mysqli_real_escape_string($link, $_POST['ratedIndex']);
+	$rating++;
+	echo "review: ".$escaped_review." ";
 	echo "rating: ".$rating."<br>";
-	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $rating . "');";
+	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $escaped_review . "', '" . $rating . "');";
 
 	if (mysqli_query($link, $sql)) {
 	  echo "Record updated successfully";
