@@ -71,20 +71,12 @@ if(isset($_POST['save']))
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $_POST['ratedIndex'] . "');";
 
 	if (mysqli_query($link, $sql)) {
-	  echo "Record updated successfully";
+	  echo "<script>
+    window.alert('Succesfully rated!');
+    window.location.href='https://sleepy-meadow-98391.herokuapp.com/rating.php?company=" .$_SESSION["company"] . "&product=" . $_SESSION["product"] . "&type=". $type."';</script>";
 	} else {
-	  echo "Error updating record: " . mysqli_error($link);
-	}
-
-	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
-	$result = mysqli_query($link, $sql);
-	if (mysqli_num_rows($result) > 0) {
-	  // output data of each row
-	  while($row = mysqli_fetch_assoc($result)) {
-	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
-	  }
-	} else {
-	  echo "0 results";
+	  echo "<script>
+    window.alert('".mysqli_error($link)."');</script>";
 	}
 } else {
 	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
