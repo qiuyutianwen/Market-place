@@ -68,7 +68,9 @@ require_once "config.php";
 if(isset($_POST['save']))
 {
 	$_POST['ratedIndex']++;
-	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $_POST['review'] . "', '" . $_POST['ratedIndex'] . "');";
+	$re = mysqli_real_escape_string($link, $_POST['review']);
+	$ra = mysqli_real_escape_string($link, $_POST['ratedIndex']);
+	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $re . "', '" . $ra. "');";
 
 	if (mysqli_query($link, $sql)) {
 	  // echo "<script>
@@ -84,6 +86,8 @@ if(isset($_POST['save']))
 	$result = mysqli_query($link, $sql);
 	if (mysqli_num_rows($result) > 0) {
 	  // output data of each row
+
+		echo "<script>alert('records found!');</script>";
 	  while($row = mysqli_fetch_assoc($result)) {
 	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
 	  }
