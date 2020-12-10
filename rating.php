@@ -72,7 +72,7 @@ if(isset($_POST['save']))
 	$ra = mysqli_real_escape_string($link, $_POST['ratedIndex']);
 	$sql = "INSERT INTO rating (company, product, username, review, rating)" . " VALUES ('" . $_SESSION["company"] . "', '" . $_SESSION["product"] . "', '" . $_SESSION["username"] . "', '" . $re . "', '" . $ra. "');";
 
-	if (mysqli_query($link, $sql)) {
+	if (mysqli_query($link, $sql) === TRUE) {
 	  // echo "<script>
    //  window.alert('Succesfully rated!');
    //  window.location.href='https://sleepy-meadow-98391.herokuapp.com/rating.php?company=" .$_SESSION["company"] . "&product=" . $_SESSION["product"] . "&type=". $type."';</script>";
