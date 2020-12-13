@@ -198,10 +198,10 @@ mysqli_close($link);
 					{
 						echo "<li>
 							<div>
-								<img src="images/defaultUser.png">
-								<span class="username">".$data_array[$i][2]."</span>
-								<span class="stars">Rating: ".$data_array[$i][4]."</span>
-								<span class="reviewDate">Posted at: ".$data_array[$i][5]."</span>
+								<img src='images/defaultUser.png'>
+								<span class='username'>".$data_array[$i][2]."</span>
+								<span class='stars'>Rating: ".$data_array[$i][4]."</span>
+								<span class='reviewDate'>Posted at: ".$data_array[$i][5]."</span>
 							</div>
 							<div>
 								<p>
