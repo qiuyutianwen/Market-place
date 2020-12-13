@@ -65,12 +65,21 @@ require_once "config.php";
 	// $rating++;
 	// echo "review: ".$escaped_review." ";
 	// echo "rating: ".$rating."<br>";
-	$sql = "SELECT company, product, username, review, rating FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "';";
+	$sql = "SELECT company, product, username, review, rating, reg_date FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "'ORDER BY reg_date DESC;";
 	$result = mysqli_query($link, $sql);
+	$data_array = array(); 
 	if (mysqli_num_rows($result) > 0) {
 	  // output data of each row
-	  while($row = mysqli_fetch_assoc($result)) {
-	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
+	    while($row = mysqli_fetch_assoc($result)) {
+	    	$data_row = array();
+	    	array_push($data_row, $row["company"]);
+	    	array_push($data_row, $row["product"]);
+	    	array_push($data_row, $row["username"]);
+	    	array_push($data_row, $row["review"]);
+	    	array_push($data_row, $row["rating"]);
+	    	array_push($data_row, $row["reg_date"]);
+	    	array_push($data_array, $data_row);
+	      echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"] . "<br>";
 	  }
 	} else {
 	  echo "0 results";
