@@ -250,7 +250,8 @@ function() {
             return e([0, 15, 0], 15)
         }]
     }), n({
-        geometry: new THREE.IcosahedronGeometry(0.5, 2),
+        rainbow: !0,
+        geometry: new THREE.IcosahedronGeometry(0.8, 3),
         material: new THREE.MeshPhongMaterial({
             emissive: u(7 / 8),
             specular: "#efefef",
