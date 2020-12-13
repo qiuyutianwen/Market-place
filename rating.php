@@ -23,7 +23,7 @@ if (mysqli_num_rows($result) > 0) {
     $visitTimes =  $row["visitTimes"];
   }
 } else {
-  echo "<script>alert('visitTimes database error!');</script>";
+  echo "<script>alert('This page hasn't been visited now!');</script>";
 }
 $new_vt = (int)$visitTimes + 1;
 $sql = "UPDATE visitTimes SET visitTimes = '" .$new_vt . "' WHERE company = '" . $company . "' AND product = '" . $product . "';";
@@ -79,7 +79,7 @@ if (mysqli_num_rows($result) > 0) {
     	}
   }
 } else {
-  echo "<script>alert('rating database error!');</script>";
+  echo "<script>alert('This page doesn't have any reviews now!');</script>";
 }
 if($count > 0)
 {
