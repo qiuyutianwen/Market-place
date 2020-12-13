@@ -26,7 +26,6 @@ echo "new test<br>";
 $array_len = sizeof($data_array);
 for($i=0; $i < $array_len;$i++)
 {
-	$data_array[$i]
 	echo "company: " . $data_array[$i][0]. " product: ".$data_array[$i][1]." username: ".$data_array[$i][2]." review: ".$data_array[$i][3]." rating: ".$data_array[$i][4]." reg_date: ".$data_array[$i][5] . "<br>";
 }
 mysqli_close($link);
