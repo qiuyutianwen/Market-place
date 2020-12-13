@@ -1,29 +1,35 @@
  /* Rating Overview */
+ body {
+  margin: 0;
+  padding: 0;
+ }
 .rating_title {
   font-size: 3em;
   text-align: center;
+  margin: 0;
+  color: #000;
 }
 .rating_product_img {
   float: left;
   width: 38%;
   padding: 0 1%;
   text-align: center;
-}
-.rating_product_img picture {
-  margin: 0 auto;
-  max-width: 535px;
   max-height: 340px;
   overflow: hidden;
 }
+.rating_product_img picture {
+  margin: 0 auto;
+}
 .rating_product_img img {
-  max-width: 535px;
+  max-width: 713px;
   width: 100%;
   height: 100%;
 }
 .rating_commonts {
   float: left;
-  width: 59%;
+  width: 57%;
   padding-right: 1%; 
+  padding-left: 2%;
   height: 300px;
 }
 .rating_commonts label, .rating_commonts textarea {
@@ -100,10 +106,17 @@
 }
 .review_list .stars {
   text-align: right;
+    position: absolute;
+    width: 300px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+.review_list .reviewDate{
+  font-size: 1.2em;
+  font-weight: 500;
   position: absolute;
-  width: 300px;
-  font-size: 7px;
-  margin-top: 24px;
+  margin-top: 50px;
+  margin-left: 10px;
 }
 .review_list li div:first-child {
   width: 100%;

@@ -98,159 +98,79 @@ mysqli_close($link);
 	<meta http-equiv="X-UA-Compatiable" content="ie=edge">
 	<title>Rating</title>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
 	<link rel="stylesheet" href="CSS/rating.css"/>
 </head>
-<body style="background-color: #000; color: #fff;">
-	<h1 class="rating_title"  style="font-family: 'Pacifico';font-size: 60px; background-image: linear-gradient(to right, #33ccff, #ff99cc);">Review</h1>
-	<section style="padding: 50px 0 50px 0;">
-		
-		<div class="rating_product_img">
-			<picture>
-				<?php echo "<img src='images/$company/$product.$type'>";?>
-			</picture>
-		</div>
-		<div class="rating_commonts">
-			<label>Write a Review</label>
-			<textarea id="comment" placeholder="Write something.." style="height:150px" maxlength="255"></textarea>
-			<div>
-				<span>Rating</span>
-				<i class="fa fa-star fa-3x" data-index="0"></i>
-				<i class="fa fa-star fa-3x" data-index="1"></i>
-				<i class="fa fa-star fa-3x" data-index="2"></i>
-				<i class="fa fa-star fa-3x" data-index="3"></i>
-				<i class="fa fa-star fa-3x" data-index="4"></i>
-			</div>
-		</div>
-		<div class="clear"></div>
-	</section>
+<body>
+	<div>
+		<?php echo "<img src='images/$company/$product.$type'>";?>
+		<label>Review</label>
+		<textarea id="comment" placeholder="Write something.." style="height:200px" maxlength="255"></textarea>
+	</div>
+	<div align="center" style="background: #000; padding: 50px;">
+		<i class="fa fa-star fa-3x" data-index="0"></i>
+		<i class="fa fa-star fa-3x" data-index="1"></i>
+		<i class="fa fa-star fa-3x" data-index="2"></i>
+		<i class="fa fa-star fa-3x" data-index="3"></i>
+		<i class="fa fa-star fa-3x" data-index="4"></i>
+	</div>
 
-	<section style="background-color:#333333; padding: 0 0 50px 0;">
-		<div class="review_left" id="fixPara">
-		<div class="rating_starts">
-			<?php echo "<p>Average Rating: $count Reviewers</p>";?>
-			<?php echo "<h1>$average_rating</h1>";?>		
-		</div>
-		<div class="reviewRow">
-		  <div class="side">
-		    <div>5 star</div>
-		  </div>
-		  <div class="middle">
-		    <div class="bar-container">
-		      <div class="bar-5" id="bar_5"></div>
-		    </div>
-		  </div>
-		  <div class="side right">
-		    <?php echo "<div>$star_5</div>";?>	
-		  </div>
-		  <div class="side">
-		    <div>4 star</div>
-		  </div>
-		  <div class="middle">
-		    <div class="bar-container">
-		      <div class="bar-4" id="bar_4"></div>
-		    </div>
-		  </div>
-		  <div class="side right">
-		    <?php echo "<div>$star_4</div>";?>	
-		  </div>
-		  <div class="side">
-		    <div>3 star</div>
-		  </div>
-		  <div class="middle">
-		    <div class="bar-container">
-		      <div class="bar-3" id="bar_3"></div>
-		    </div>
-		  </div>
-		  <div class="side right">
-		    <?php echo "<div>$star_3</div>";?>	
-		  </div>
-		  <div class="side">
-		    <div>2 star</div>
-		  </div>
-		  <div class="middle">
-		    <div class="bar-container">
-		      <div class="bar-2" id="bar_2"></div>
-		    </div>
-		  </div>
-		  <div class="side right">
-		    <?php echo "<div>$star_2</div>";?>	
-		  </div>
-		  <div class="side">
-		    <div>1 star</div>
-		  </div>
-		  <div class="middle">
-		    <div class="bar-container">
-		      <div class="bar-1" id="bar_1"></div>
-		    </div>
-		  </div>
-		  <div class="side right">
-		    <?php echo "<div>$star_1</div>";?>	
-		  </div>
-		</div>
-		</div>
-
-		<div class="review_right">
-			<ul class="review_list">
-				<?php 
-					$array_len = sizeof($data_array);
-					for($i=0; $i < $array_len;$i++)
-					{
-						echo "<li>
-							<div>
-								<img src="images/defaultUser.png">
-								<span class="username">".$data_array[$i][2]."</span>
-								<span class="stars">Rating: ".$data_array[$i][4]."</span>
-								<span class="reviewDate">Posted at: ".$data_array[$i][5]."</span>
-							</div>
-							<div>
-								<p>
-								".$data_array[$i][3]."
-								</p>
-							</div>
-						</li>";
-					}?>
-			</ul>
-		</div>
-
-		<div class="clear"></div>
-	</section>
-
-	<script type="text/javascript">
-		var star1 = '<?php echo $star_1;?>';
-		var star2 = '<?php echo $star_2;?>';
-		var star3 = '<?php echo $star_3;?>';
-		var star4 = '<?php echo $star_4;?>';
-		var star5 = '<?php echo $star_5;?>';
-		var max = Math.max(star1, star2, star3, star4, star5);
-		document.getElementById("bar_5").style.width = round(star5/max*100).toString() + "%";
-		document.getElementById("bar_4").style.width = round(star4/max*100).toString() + "%";
-		document.getElementById("bar_3").style.width = round(star3/max*100).toString() + "%";
-		document.getElementById("bar_2").style.width = round(star2/max*100).toString() + "%";
-		document.getElementById("bar_1").style.width = round(star1/max*100).toString() + "%";
-	</script>
-	<script type="text/javascript">
-    window.onload=
-        function(){
-            var oDiv = document.getElementById("fixPara"),
-                H = 0,
-                Y = oDiv        
-            while (Y) {
-                H += Y.offsetTop; 
-                Y = Y.offsetParent;
-            }
-            window.onscroll = function()
-            {
-                var s = document.body.scrollTop || document.documentElement.scrollTop
-                if(s>H) {
-                    oDiv.style = "position:fixed;top:0;"
-                } else {
-                    oDiv.style = ""
-                }
-            }
-        }
-	</script>
-
+	 <div class="reviewRow">
+	  <div class="side">
+	    <div>5 star</div>
+	  </div>
+	  <div class="middle">
+	    <div class="bar-container">
+	      <div class="bar-5"></div>
+	    </div>
+	  </div>
+	  <div class="side right">
+	    <div>500</div>
+	  </div>
+	  <div class="side">
+	    <div>4 star</div>
+	  </div>
+	  <div class="middle">
+	    <div class="bar-container">
+	      <div class="bar-4"></div>
+	    </div>
+	  </div>
+	  <div class="side right">
+	    <div>63</div>
+	  </div>
+	  <div class="side">
+	    <div>3 star</div>
+	  </div>
+	  <div class="middle">
+	    <div class="bar-container">
+	      <div class="bar-3"></div>
+	    </div>
+	  </div>
+	  <div class="side right">
+	    <div>15</div>
+	  </div>
+	  <div class="side">
+	    <div>2 star</div>
+	  </div>
+	  <div class="middle">
+	    <div class="bar-container">
+	      <div class="bar-2"></div>
+	    </div>
+	  </div>
+	  <div class="side right">
+	    <div>200</div>
+	  </div>
+	  <div class="side">
+	    <div>1 star</div>
+	  </div>
+	  <div class="middle">
+	    <div class="bar-container">
+	      <div class="bar-1"></div>
+	    </div>
+	  </div>
+	  <div class="side right">
+	    <div>20</div>
+	  </div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script>
 		var ratedIndex = -1;
