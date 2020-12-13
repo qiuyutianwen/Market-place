@@ -1,15 +1,15 @@
 <?php
-session_start();
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("Location: /login.php");
-    exit;
-}
-$username = $_SESSION["username"];
-$company = $_GET["company"];
-$product = $_GET["product"];
-echo $username;
-echo $company;
-echo $product;
+require_once "config.php";
+$company = "yuqiu";
+$product = "p1";
+$sql = "SELECT company, product, username, review, rating, reg_date FROM rating WHERE company = '" . $company . "' AND product = '" . $product . "'ORDER BY reg_date DESC;";
+	$result = mysqli_query($link, $sql);
+	if (mysqli_num_rows($result) > 0) {
+	  // output data of each row
+	  while($row = mysqli_fetch_assoc($result)) {
+	    echo "company: " . $row["company"]. " product: ".$row["product"]." username: ".$row["username"]." review: ".$row["review"]." rating: ".$row["rating"]." reg_date: ".$row["reg_date"] . "<br>";
+	  }
+	} else {
+	  echo "0 results";
+	}
 ?>
