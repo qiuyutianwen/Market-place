@@ -90,7 +90,7 @@ mysqli_close($link);
 				<div class="frame__title-wrap">
 					<?php echo "<h1 class='frame__title'>Welcome, $username</h1>";?>
 				</div>
-				<a class="frame__github" href="https://github.com/vaneenige/scroll-transitions-webgl">GitHub</a>
+				<a class="frame__github" href="https://github.com/qiuyutianwen/Market-place">GitHub</a>
 				<div class="frame__links">
 					<a href="logout.php">Log Out</a>
 				</div>
