@@ -249,6 +249,28 @@ function() {
         function() {
             return e([0, 15, 0], 15)
         }]
+    }), n({
+        geometry: new THREE.IcosahedronGeometry(0.5, 2),
+        material: new THREE.MeshPhongMaterial({
+            emissive: u(7 / 8),
+            specular: "#efefef",
+            shininess: 20,
+            flatShading: !0
+        }),
+        multiplier: 200,
+        duration: .7,
+        points: [function() {
+            return e([0, 0, 0], 10)
+        },
+        function() {
+            return e([0, 0, 0], 8)
+        },
+        function() {
+            return e([0, 0, 0], 2)
+        },
+        function() {
+            return e([0, 0, 0], 12)
+        }]
     })],
     l = document.querySelectorAll(".heading"),
     f = document.querySelector(".header");
