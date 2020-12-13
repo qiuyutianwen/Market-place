@@ -32,7 +32,7 @@ if (mysqli_query($link, $sql)) {
   //just update database
 } else {
 	$error = mysqli_error($link);
-	echo "<script>alert('$error');<\/script>";
+	echo "<script>alert('$error');</script>";
 }
 
 //get review data

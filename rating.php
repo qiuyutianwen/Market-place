@@ -79,7 +79,7 @@ if (mysqli_num_rows($result) > 0) {
     	}
   }
 } else {
-  echo "<script>alert('rating database error!');<\/script>";
+  echo "<script>alert('rating database error!');</script>";
 }
 if($count > 0)
 {
