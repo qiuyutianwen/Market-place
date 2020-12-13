@@ -693,7 +693,7 @@ mysqli_close($link);
 			    data: {
 			        labels: [p1, p2, p3, p4, p5],
 			        datasets: [{
-			            label: 'Avg rating',
+			            label: 'Visit Times',
 			            data: [data1, data2, data3, data4, data5],
 			            backgroundColor: [
 			                'rgba(255, 99, 132, 0.2)',
