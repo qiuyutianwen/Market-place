@@ -9,6 +9,42 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 $username = $_SESSION["username"];
+
+require_once "config.php";
+
+//get top 5 most average rating data
+$sql = "SELECT company, product, AVG(rating) AS AverageRating FROM rating GROUP BY company, product ORDER BY AverageRating DESC LIMIT 5;";
+$result = mysqli_query($link, $sql);
+$Top5_Most_Avg_array = array();
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+  	$array_item = array();
+  	$Top5_Most_Avg_name = $row["company"]."-".$row["product"];
+  	$Top5_Most_Avg_rating = $row["AverageRating"];
+    
+    array_push($array_item, $Top5_Most_Avg_name);
+    array_push($array_item, $Top5_Most_Avg_rating);
+    array_push($Top5_Most_Avg_array, $array_item);
+  }
+} else {
+  echo "<script>alert('No data!');</script>";
+}
+
+//get top 5 most visited data
+$sql = "SELECT company, product, visitTimes FROM visitTimes ORDER BY visitTimes DESC LIMIT 5;";
+$result = mysqli_query($link, $sql);
+$visitTimes = "";
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    $visitTimes =  $row["visitTimes"];
+  }
+} else {
+  echo "<script>alert('This page hasn't been visited now!');</script>";
+}
+
+mysqli_close($link);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
