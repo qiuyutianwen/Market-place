@@ -5,7 +5,7 @@ $result = mysqli_query($link, $sql);
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
-    echo "company: ".$row["company"]. " product: " .$row["product"]. " username: " .$row["username"]. " review: " .$row["review"]." Rating: ".$row["Rating"]."<br>";
+    echo "company: ".$row["company"]. " product: " .$row["product"]. " username: " .$row["username"]. " review: " .$row["review"]." Rating: ".$row["rating"]."<br>";
   }
 } else {
   echo "<script>alert('This page hasn't been visited now!');</script>";
