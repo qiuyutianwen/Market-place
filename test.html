@@ -1,94 +1,3 @@
-<?php
-session_start();
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("Location: /login.php");
-    exit;
-}
-$username = $_SESSION["username"];
-$company = $_GET["company"];
-$product = $_GET["product"];
-$type = $_GET["type"];
-$_SESSION["company"] = $company;
-$_SESSION["product"] = $product;
-require_once "config.php";
-//update visitTimes table
-$sql = "SELECT visitTimes FROM visitTimes WHERE company = '" . $company . "' AND product = '" . $product . "';";
-$result = mysqli_query($link, $sql);
-$visitTimes = "";
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    $visitTimes =  $row["visitTimes"];
-  }
-} else {
-  echo "<script>alert('visitTimes database error!');</script>";
-}
-$new_vt = (int)$visitTimes + 1;
-$sql = "UPDATE visitTimes SET visitTimes = '" .$new_vt . "' WHERE company = '" . $company . "' AND product = '" . $product . "';";
-
-if (mysqli_query($link, $sql)) {
-  //just update database
-} else {
-	$error = mysqli_error($link);
-	echo "<script>alert('$error');</script>";
-}
-
-//get review data
-$sql = "SELECT company, product, username, review, rating, reg_date FROM rating WHERE company = '" . $_SESSION["company"] . "' AND product = '" . $_SESSION["product"] . "'ORDER BY reg_date DESC;";
-$result = mysqli_query($link, $sql);
-$data_array = array();
-$count = 0;
-$total_rating = 0; 
-$average_rating = 0.0;
-$star_1 = 0;
-$star_2 = 0;
-$star_3 = 0;
-$star_4 = 0;
-$star_5 = 0;
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-    	$data_row = array();
-    	array_push($data_row, $row["company"]);
-    	array_push($data_row, $row["product"]);
-    	array_push($data_row, $row["username"]);
-    	array_push($data_row, $row["review"]);
-    	array_push($data_row, $row["rating"]);
-    	array_push($data_row, $row["reg_date"]);
-    	array_push($data_array, $data_row);
-    	$total_rating += $row["rating"];
-    	$count++;
-
-    	if($row["rating"] === "5")
-    	{
-    		$star_5++;
-    	} elseif($row["rating"] === "4")
-    	{
-    		$star_4++;
-    	} elseif($row["rating"] === "3")
-    	{
-    		$star_3++;
-    	} elseif($row["rating"] === "2")
-    	{
-    		$star_2++;
-    	} elseif($row["rating"] === "1")
-    	{
-    		$star_1++;
-    	}
-  }
-} else {
-  echo "<script>alert('rating database error!');</script>";
-}
-if($count > 0)
-{
-	$average_rating = $total_rating / $count;
-	$average_rating = round($average_rating, 1);
-}
-mysqli_close($link);
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -107,7 +16,7 @@ mysqli_close($link);
 		
 		<div class="rating_product_img">
 			<picture>
-				<?php echo "<img src='images/$company/$product.$type'>";?>
+				<img src='images/yuqiu/p1.png'>"
 			</picture>
 		</div>
 		<div class="rating_commonts">
@@ -128,8 +37,8 @@ mysqli_close($link);
 	<section style="background-color:#333333; padding: 0 0 50px 0;">
 		<div class="review_left" id="fixPara">
 		<div class="rating_starts">
-			<?php echo "<p>Average Rating: $count Reviewers</p>";?>
-			<?php echo "<h1>$average_rating</h1>";?>		
+			<p>Average Rating: 13 Reviewers</p>
+			<h1>4.8</h1>	
 		</div>
 		<div class="reviewRow">
 		  <div class="side">
@@ -141,7 +50,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_5</div>";?>	
+		    5
 		  </div>
 		  <div class="side">
 		    <div>4 star</div>
@@ -152,7 +61,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_4</div>";?>	
+		   2
 		  </div>
 		  <div class="side">
 		    <div>3 star</div>
@@ -163,7 +72,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_3</div>";?>	
+		   3
 		  </div>
 		  <div class="side">
 		    <div>2 star</div>
@@ -174,7 +83,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_2</div>";?>	
+		    0
 		  </div>
 		  <div class="side">
 		    <div>1 star</div>
@@ -185,31 +94,26 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_1</div>";?>	
+		    0
 		  </div>
 		</div>
 		</div>
 
 		<div class="review_right">
 			<ul class="review_list">
-				<?php 
-					$array_len = sizeof($data_array);
-					for($i=0; $i < $array_len;$i++)
-					{
-						echo "<li>
-							<div>
-								<img src="images/defaultUser.png">
-								<span class="username">".$data_array[$i][2]."</span>
-								<span class="stars">Rating: ".$data_array[$i][4]."</span>
-								<span class="reviewDate">Posted at: ".$data_array[$i][5]."</span>
-							</div>
-							<div>
-								<p>
-								".$data_array[$i][3]."
-								</p>
-							</div>
-						</li>";
-					}?>
+				<li>
+					<div>
+						<img src="images/defaultUser.png">
+						<span class="username">Username</span>
+						<span class="stars">Rating: 4</span>
+						<span class="reviewDate">Posted at: 2020-12-10 05:46:29</span>
+					</div>
+					<div>
+						<p>
+						star rating system with feedback and review page deisgn usign html and css,css review page design demo,css rating bar,customer project review page design,pure css review page design,html css feedback page design
+						</p>
+					</div>
+				</li>
 			</ul>
 		</div>
 
@@ -217,11 +121,11 @@ mysqli_close($link);
 	</section>
 
 	<script type="text/javascript">
-		var star1 = '<?php echo $star_1;?>';
-		var star2 = '<?php echo $star_2;?>';
-		var star3 = '<?php echo $star_3;?>';
-		var star4 = '<?php echo $star_4;?>';
-		var star5 = '<?php echo $star_5;?>';
+		var star1 = 0;
+		var star2 = 0;
+		var star3 = 3;
+		var star4 = 7;
+		var star5 = 5;
 		var max = Math.max(star1, star2, star3, star4, star5);
 		document.getElementById("bar_5").style.width = Math.floor(star5/max*100).toString() + "%";
 		document.getElementById("bar_4").style.width = Math.floor(star4/max*100).toString() + "%";
