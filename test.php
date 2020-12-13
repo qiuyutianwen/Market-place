@@ -61,5 +61,10 @@ for($i=0; $i < $array_len;$i++)
 }
 echo $average_rating."<br>";
 echo $count."<br>";
+echo $star_5."<br>";
+echo $star_4."<br>";
+echo $star_3."<br>";
+echo $star_2."<br>";
+echo $star_1."<br>";
 mysqli_close($link);
 ?>
