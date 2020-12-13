@@ -50,7 +50,7 @@ if (mysqli_num_rows($result) > 0) {
   echo "<script>alert('No data!');</script>";
 }
 
-get top 5 most visited data
+//get top 5 most visited data
 $sql = "SELECT company, product, visitTimes FROM visitTimes ORDER BY visitTimes DESC LIMIT 5;";
 $result = mysqli_query($link, $sql);
 $Top5_Most_Visit_array = array();
