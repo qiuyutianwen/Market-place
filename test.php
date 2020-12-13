@@ -67,21 +67,21 @@ echo $star_3."<br>";
 echo $star_2."<br>";
 echo $star_1."<br>";
 $array_len = sizeof($data_array);
-					for($i=0; $i < $array_len;$i++)
-					{
-						echo "<li>
-							<div>
-								<img src="images/defaultUser.png">
-								<span class="username">".$data_array[$i][2]."</span>
-								<span class="stars">Rating: ".$data_array[$i][4]."</span>
-								<span class="reviewDate">Posted at: ".$data_array[$i][5]."</span>
-							</div>
-							<div>
-								<p>
-								".$data_array[$i][3]."
-								</p>
-							</div>
-						</li>";
-					}
+for($i=0; $i < $array_len;$i++)
+{
+	echo "<li>
+		<div>
+			<img src='images/defaultUser.png'>
+			<span>".$data_array[$i][2]."</span>
+			<span>Rating: ".$data_array[$i][4]."</span>
+			<span>Posted at: ".$data_array[$i][5]."</span>
+		</div>
+		<div>
+			<p>
+			".$data_array[$i][3]."
+			</p>
+		</div>
+	</li>";
+}
 mysqli_close($link);
 ?>
