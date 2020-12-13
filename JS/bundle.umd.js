@@ -250,27 +250,26 @@ function() {
             return e([0, 15, 0], 15)
         }]
     }), n({
-        rainbow: !0,
-        geometry: new THREE.IcosahedronGeometry(0.8, 3),
+        geometry: new THREE.BoxGeometry(1, 1, 1),
         material: new THREE.MeshPhongMaterial({
-            emissive: u(7 / 8),
+            emissive: u(4 / 5),
             specular: "#efefef",
             shininess: 20,
             flatShading: !0
         }),
-        multiplier: 200,
-        duration: .7,
+        multiplier: 400,
+        duration: .4,
         points: [function() {
-            return e([0, 0, 0], 10)
+            return e([0, -20, 0], 0)
         },
         function() {
-            return e([0, 0, 0], 8)
+            return e([0, 10, 0], 0)
         },
         function() {
-            return e([0, 0, 0], 2)
+            return e([0, -10, 0], 10)
         },
         function() {
-            return e([0, 0, 0], 12)
+            return e([0, 15, 0], 15)
         }]
     })],
     l = document.querySelectorAll(".heading"),
