@@ -249,28 +249,6 @@ function() {
         function() {
             return e([0, 15, 0], 15)
         }]
-    }), n({
-        geometry: new THREE.BoxGeometry(1, 1, 1),
-        material: new THREE.MeshPhongMaterial({
-            emissive: u(4 / 5),
-            specular: "#efefef",
-            shininess: 20,
-            flatShading: !0
-        }),
-        multiplier: 400,
-        duration: .4,
-        points: [function() {
-            return e([0, -20, 0], 0)
-        },
-        function() {
-            return e([0, 10, 0], 0)
-        },
-        function() {
-            return e([0, -10, 0], 10)
-        },
-        function() {
-            return e([0, 15, 0], 15)
-        }]
     })],
     l = document.querySelectorAll(".heading"),
     f = document.querySelector(".header");
