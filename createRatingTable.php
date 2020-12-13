@@ -29,13 +29,13 @@ if (mysqli_query($link, $sql2)) {
 $sql3 = "INSERT INTO rating (company, product, username, review, rating)
 VALUES ('yuqiu', 'p1', 'qwer@gmail.com', 'Great! I like it very much.', '5');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
-VALUES ('yuqiu', 'p1', 'qwe@gmail.com', 'Good! I like it!', '4');";
+VALUES ('anbo', 'p1', 'qwe@gmail.com', 'Good! I like it!', '5');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
-VALUES ('yuqiu', 'p1', 'qwert@gmail.com', 'Good!', '4');";
+VALUES ('dongmeiyin', 'p1', 'qwert@gmail.com', 'Good!', '5');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
-VALUES ('yuqiu', 'p1', 'qwertu@gmail.com', 'Great! That is what I expected!', '5');";
+VALUES ('jingxue', 'p1', 'qwertu@gmail.com', 'Great! That is what I expected!', '5');";
 $sql3 .= "INSERT INTO rating (company, product, username, review, rating)
-VALUES ('yuqiu', 'p1', 'qwer@gmail.com', 'Good!', '4');";
+VALUES ('yirusun', 'p1', 'qwer@gmail.com', 'Good!', '5');";
 
 if (mysqli_multi_query($link, $sql3)) {
   echo "New records created successfully";
