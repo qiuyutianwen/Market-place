@@ -71,7 +71,6 @@ mysqli_close($link);
 			supportsCssVars() ||
 				alert('Please view this demo in a modern browser that supports CSS Variables.');
 		</script>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 		<script src="JS/modernizr.custom.js"></script>
 	</head>
 	<body>
@@ -651,20 +650,18 @@ mysqli_close($link);
     <script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
     <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
     <script src="JS/bundle.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script>
 			function monitorHeading () {
-			    var h_array = document.querySelectorAll("div.heading");
-
-  			  for (i = 0; i < h_array.length; i++) {
-  					if(h_array[i].style.opacity !== "0")
-  					{
-              h_array[i].show();
-  					} else {
-              h_array[i].hide();
+          $(".heading").each(function() {
+            if($(this).style.opacity !== "0")
+            {
+              $(this).show();
+            } else {
+              $(this).hide();
             }
-  				}
+          });
 			}
-
 			//--- 150 is a good compromise between UI response and browser load.
 			window.setInterval (monitorHeading, 150);
 		</script>
