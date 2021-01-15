@@ -654,7 +654,7 @@ mysqli_close($link);
     <script>
 			function monitorHeading () {
           $(".heading").each(function() {
-            if($(this).style.opacity !== "0")
+            if($(this).css('opacity') !== "0")
             {
               $(this).show();
             } else {
