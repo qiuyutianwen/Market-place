@@ -652,11 +652,13 @@ mysqli_close($link);
   			  for (i = 0; i < h_array.length; i++) {
   					if(h_array[i].style.opacity !== "0")
   					{
+              h_array[i].disabled = false;
               var nodes = h_array[i].getElementsByTagName('*');
               for(var i = 0; i < nodes.length; i++){
                    nodes[i].disabled = false;
               }
   					} else {
+              h_array[i].disabled = true;
               var nodes = h_array[i].getElementsByTagName('*');
               for(var i = 0; i < nodes.length; i++){
                    nodes[i].disabled = true;
@@ -666,7 +668,7 @@ mysqli_close($link);
 			}
 
 			//--- 150 is a good compromise between UI response and browser load.
-			window.setInterval (monitorHeading, 1000);
+			window.setInterval (monitorHeading, 150);
 		</script>
 
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
