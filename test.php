@@ -71,6 +71,7 @@ mysqli_close($link);
 			supportsCssVars() ||
 				alert('Please view this demo in a modern browser that supports CSS Variables.');
 		</script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 		<script src="JS/modernizr.custom.js"></script>
 	</head>
 	<body>
@@ -645,24 +646,21 @@ mysqli_close($link);
 
 		</main>
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
-		<script>
+    <script src="JS/toucheffects.js"></script>
+    <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
+    <script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
+    <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
+    <script src="JS/bundle.umd.js"></script>
+    <script>
 			function monitorHeading () {
 			    var h_array = document.querySelectorAll("div.heading");
 
   			  for (i = 0; i < h_array.length; i++) {
   					if(h_array[i].style.opacity !== "0")
   					{
-              h_array[i].disabled = false;
-              var nodes = h_array[i].getElementsByTagName('*');
-              for(var i = 0; i < nodes.length; i++){
-                   nodes[i].disabled = false;
-              }
+              h_array[i].show();
   					} else {
-              h_array[i].disabled = true;
-              var nodes = h_array[i].getElementsByTagName('*');
-              for(var i = 0; i < nodes.length; i++){
-                   nodes[i].disabled = true;
-              }
+              h_array[i].hide();
             }
   				}
 			}
@@ -768,10 +766,6 @@ mysqli_close($link);
 			    }
 			});
 		</script>
-		<script src="JS/toucheffects.js"></script>
-		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
-		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
-		<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-		<script src="JS/bundle.umd.js"></script>
+
 	</body>
 </html>
