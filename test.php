@@ -628,12 +628,12 @@ mysqli_close($link);
 					</div>
 				</div>
 				<div class="heading" style="z-index: 2">
-					<div style="position: relative; height:50%; width:60%">
+					<div style="position: relative; height:600px; width:600px">
   					<canvas id="myChart1"></canvas>
 					</div>
 				</div>
 				<div class="heading" style="z-index: 3">
-					<div style="position: relative; height:50%; width:60%">
+					<div style="position: relative; height:600px; width:600px">
   					<canvas id="myChart2"></canvas>
 					</div>
 				</div>
@@ -712,8 +712,10 @@ mysqli_close($link);
                 },
               title: {
                   display: true,
-                  text: 'Top 5 most visited products'
-              }
+                  text: 'Top 5 most visited products',
+                  fontSize: 50,
+              },
+              responsive: true
 			    }
 			});
 		</script>
@@ -764,8 +766,10 @@ mysqli_close($link);
                 },
               title: {
                   display: true,
-                  text: 'Top 5 highest average rating'
-              }
+                  text: 'Top 5 highest average rating',
+                  fontSize: 50,
+              },
+              responsive: true,
 			    }
 			});
 		</script>
