@@ -629,12 +629,12 @@ mysqli_close($link);
 				</div>
 				<div class="heading" style="z-index: 2">
 					<div style="position: relative; height:600px; width:800px">
-  					<canvas id="myChart1" top="auto" left="auto"></canvas>
+  					<canvas id="myChart1"></canvas>
 					</div>
 				</div>
 				<div class="heading" style="z-index: 3">
 					<div style="position: relative; height:600px; width:800px">
-  					<canvas id="myChart2" top="auto" left="auto"></canvas>
+  					<canvas id="myChart2"></canvas>
 					</div>
 				</div>
 
@@ -757,13 +757,6 @@ mysqli_close($link);
 			        }]
 			    },
 			    options: {
-			        scales: {
-			            yAxes: [{
-			                ticks: {
-			                    beginAtZero:true
-			                }
-			            }]
-                },
               title: {
                   display: true,
                   text: 'Top 5 highest average rating',
