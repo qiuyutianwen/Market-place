@@ -708,12 +708,12 @@ mysqli_close($link);
 			                ticks: {
 			                    beginAtZero:true
 			                }
-			            }],
-                  title: {
-                      display: true,
-                      text: 'Top 5 most visited products'
-                  }
-			        }
+			            }]
+                },
+              title: {
+                  display: true,
+                  text: 'Top 5 most visited products'
+              }
 			    }
 			});
 		</script>
@@ -760,12 +760,12 @@ mysqli_close($link);
 			                ticks: {
 			                    beginAtZero:true
 			                }
-			            }],
-                  title: {
-                      display: true,
-                      text: 'Top 5 highest average rating'
-                  }
-			        }
+			            }]
+                },
+              title: {
+                  display: true,
+                  text: 'Top 5 highest average rating'
+              }
 			    }
 			});
 		</script>
