@@ -799,11 +799,11 @@ mysqli_close($link);
 		</script>
     <script>
 			var ctx = document.getElementById("myChart3");
-			var p1 = '<?php echo $Top5_Most_Recently_Visit_array[0][0];?>';
-			var p2 = '<?php echo $Top5_Most_Recently_Visit_array[1][0];?>';
-			var p3 = '<?php echo $Top5_Most_Recently_Visit_array[2][0];?>';
-			var p4 = '<?php echo $Top5_Most_Recently_Visit_array[3][0];?>';
-			var p5 = '<?php echo $Top5_Most_Recently_Visit_array[4][0];?>';
+			var p1 = '<?php echo $Top5_Most_Recently_Visit_array[0][1];?>';
+			var p2 = '<?php echo $Top5_Most_Recently_Visit_array[1][1];?>';
+			var p3 = '<?php echo $Top5_Most_Recently_Visit_array[2][1];?>';
+			var p4 = '<?php echo $Top5_Most_Recently_Visit_array[3][1];?>';
+			var p5 = '<?php echo $Top5_Most_Recently_Visit_array[4][1];?>';
 
 			var data1 = '<?php echo $Top5_Most_Recently_Visit_array[0][1];?>';
 			var data2 = '<?php echo $Top5_Most_Recently_Visit_array[1][1];?>';
