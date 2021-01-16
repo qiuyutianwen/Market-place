@@ -1,6 +1,6 @@
 <?php
 session_start();
- 
+
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("Location: /login.php");
@@ -40,7 +40,7 @@ $sql = "SELECT company, product, username, review, rating, reg_date FROM rating 
 $result = mysqli_query($link, $sql);
 $data_array = array();
 $count = 0;
-$total_rating = 0; 
+$total_rating = 0;
 $average_rating = 0.0;
 $star_1 = 0;
 $star_2 = 0;
@@ -87,23 +87,7 @@ if($count > 0)
 	$average_rating = round($average_rating, 1);
 }
 
-$sql = "SELECT company, product, reg_date FROM visitTimes ORDER BY reg_date DESC LIMIT 5;";
-$result = mysqli_query($link, $sql);
-$Top5_Most_Recently_Visit_array = array();
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    $array_item = array();
-    $Top5_Most_Recently_Visit_name = $row["company"]."-".$row["product"];
-    $Top5_Most_Recently_Visit_date = $row["reg_date"];
-    
-    array_push($array_item, $Top5_Most_Recently_Visit_name);
-    array_push($array_item, $Top5_Most_Recently_Visit_date);
-    array_push($Top5_Most_Recently_Visit_array, $array_item);
-  }
-} else {
-  echo "<script>alert('This page hasn't been visited now!');</script>";
-}
+
 mysqli_close($link);
 ?>
 
@@ -122,7 +106,7 @@ mysqli_close($link);
 <body style="background-color: #000; color: #fff;">
 	<h1 class="rating_title"  style="font-family: 'Pacifico';font-size: 60px; background-image: linear-gradient(to right, #33ccff, #ff99cc);">Review</h1>
 	<section style="padding: 50px 0 50px 0;">
-		
+
 		<div class="rating_product_img">
 			<picture>
 				<?php echo "<img src='images/$company/$product.$type'>";?>
@@ -147,7 +131,7 @@ mysqli_close($link);
 		<div class="review_left" id="fixPara">
 		<div class="rating_starts">
 			<?php echo "<p>Average Rating: $count Reviewers</p>";?>
-			<?php echo "<h1>$average_rating</h1>";?>		
+			<?php echo "<h1>$average_rating</h1>";?>
 		</div>
 		<div class="reviewRow">
 		  <div class="side">
@@ -159,7 +143,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_5</div>";?>	
+		    <?php echo "<div>$star_5</div>";?>
 		  </div>
 		  <div class="side">
 		    <div>4 star</div>
@@ -170,7 +154,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_4</div>";?>	
+		    <?php echo "<div>$star_4</div>";?>
 		  </div>
 		  <div class="side">
 		    <div>3 star</div>
@@ -181,7 +165,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_3</div>";?>	
+		    <?php echo "<div>$star_3</div>";?>
 		  </div>
 		  <div class="side">
 		    <div>2 star</div>
@@ -192,7 +176,7 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_2</div>";?>	
+		    <?php echo "<div>$star_2</div>";?>
 		  </div>
 		  <div class="side">
 		    <div>1 star</div>
@@ -203,34 +187,14 @@ mysqli_close($link);
 		    </div>
 		  </div>
 		  <div class="side right">
-		    <?php echo "<div>$star_1</div>";?>	
+		    <?php echo "<div>$star_1</div>";?>
 		  </div>
 		</div>
-		<ul style="list-style-type: none;">
-			<li>
-				Top 5 Most Recently Visited products:
-			</li>
-			<li>
-				<?php echo $Top5_Most_Recently_Visit_array[0][0];?>
-			</li>
-			<li>
-				<?php echo $Top5_Most_Recently_Visit_array[1][0];?>
-			</li>
-			<li>
-				<?php echo $Top5_Most_Recently_Visit_array[2][0];?>
-			</li>
-			<li>
-				<?php echo $Top5_Most_Recently_Visit_array[3][0];?>
-			</li>
-			<li>
-				<?php echo $Top5_Most_Recently_Visit_array[4][0];?>
-			</li>
-		</ul>
 		</div>
 
 		<div class="review_right">
 			<ul class="review_list">
-				<?php 
+				<?php
 					$array_len = sizeof($data_array);
 					for($i=0; $i < $array_len;$i++)
 					{
@@ -272,9 +236,9 @@ mysqli_close($link);
         function(){
             var oDiv = document.getElementById("fixPara"),
                 H = 0,
-                Y = oDiv        
+                Y = oDiv
             while (Y) {
-                H += Y.offsetTop; 
+                H += Y.offsetTop;
                 Y = Y.offsetParent;
             }
             window.onscroll = function()
@@ -292,7 +256,7 @@ mysqli_close($link);
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script>
 		var ratedIndex = -1;
-		
+
 
 		$(document).ready(function() {
 			resetStarColors();
