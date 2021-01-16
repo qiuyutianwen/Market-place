@@ -664,24 +664,24 @@ mysqli_close($link);
               <th>Product Name</th>
             </tr>
             <tr>
-              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[0][0];?></td>
-              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[0][1];?></td>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[0][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[0][0];?></td>
             </tr>
             <tr>
-              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[1][0];?></td>
-              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[1][1];?></td>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[1][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[1][0];?></td>
             </tr>
             <tr>
-              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[2][0];?></td>
-              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[2][1];?></td>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[2][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[2][0];?></td>
             </tr>
             <tr>
-              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[3][0];?></td>
-              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[3][1];?></td>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[3][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[3][0];?></td>
             </tr>
             <tr>
-              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[4][0];?></td>
-              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[4][1];?></td>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[4][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[4][0];?></td>
             </tr>
           </table>
 				</div>
