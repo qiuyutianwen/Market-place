@@ -819,7 +819,8 @@ mysqli_close($link);
 			    }
 			});
       ctx.style.top = "25%";
-      ctx.style.width = "60%";
+      ctx.style.left = "25%";
+      ctx.style.width = "50%";
       ctx.style.height = "50%";
 		</script>
 	</body>
