@@ -718,6 +718,7 @@ mysqli_close($link);
               responsive: true
 			    }
 			});
+      ctx.style.top = "20%";
 		</script>
 		<script>
 			var ctx = document.getElementById("myChart2");
