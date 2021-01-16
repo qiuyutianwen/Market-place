@@ -657,9 +657,33 @@ mysqli_close($link);
 					</div>
 				</div>
         <div class="heading" style="z-index: 3">
-					<div style="position: relative; height:600px; width:800px">
-  					<canvas id="myChart3"></canvas>
-					</div>
+          <h1>Top 5 Most Recently Visited Products</h1>
+          <table class="rwd-table">
+            <tr>
+              <th>Date(Newest->Oldest)</th>
+              <th>Product Name</th>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[0][0];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[0][1];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[1][0];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[1][1];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[2][0];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[2][1];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[3][0];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[3][1];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[4][0];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[4][1];?></td>
+            </tr>
+          </table>
 				</div>
 			</div>
 
@@ -787,57 +811,6 @@ mysqli_close($link);
               title: {
                   display: true,
                   text: 'Top 5 Highest Average Rating Products',
-                  fontSize: 30,
-              },
-              responsive: true,
-			    }
-			});
-      ctx.style.top = "25%";
-      ctx.style.left = "25%";
-      ctx.style.width = "50%";
-      ctx.style.height = "50%";
-		</script>
-    <script>
-			var ctx = document.getElementById("myChart3");
-			var p1 = '<?php echo $Top5_Most_Recently_Visit_array[0][1];?>';
-			var p2 = '<?php echo $Top5_Most_Recently_Visit_array[1][1];?>';
-			var p3 = '<?php echo $Top5_Most_Recently_Visit_array[2][1];?>';
-			var p4 = '<?php echo $Top5_Most_Recently_Visit_array[3][1];?>';
-			var p5 = '<?php echo $Top5_Most_Recently_Visit_array[4][1];?>';
-
-			var data1 = '<?php echo $Top5_Most_Recently_Visit_array[0][1];?>';
-			var data2 = '<?php echo $Top5_Most_Recently_Visit_array[1][1];?>';
-			var data3 = '<?php echo $Top5_Most_Recently_Visit_array[2][1];?>';
-			var data4 = '<?php echo $Top5_Most_Recently_Visit_array[3][1];?>';
-			var data5 = '<?php echo $Top5_Most_Recently_Visit_array[4][1];?>';
-			var myChart = new Chart(ctx, {
-			    type: 'bar',
-			    data: {
-			        labels: [p1, p2, p3, p4, p5],
-			        datasets: [{
-			            label: 'Avg rating',
-			            data: [data1, data2, data3, data4, data5],
-			            backgroundColor: [
-			                'rgba(255, 99, 132, 0.2)',
-			                'rgba(54, 162, 235, 0.2)',
-			                'rgba(255, 206, 86, 0.2)',
-			                'rgba(75, 192, 192, 0.2)',
-			                'rgba(153, 102, 255, 0.2)'
-			            ],
-			            borderColor: [
-			                'rgba(255,99,132,1)',
-			                'rgba(54, 162, 235, 1)',
-			                'rgba(255, 206, 86, 1)',
-			                'rgba(75, 192, 192, 1)',
-			                'rgba(153, 102, 255, 1)'
-			            ],
-			            borderWidth: 1
-			        }]
-			    },
-			    options: {
-              title: {
-                  display: true,
-                  text: 'Top 5 Most Recently Visited Products',
                   fontSize: 30,
               },
               responsive: true,
