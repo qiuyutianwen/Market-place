@@ -637,7 +637,11 @@ mysqli_close($link);
   					<canvas id="myChart2"></canvas>
 					</div>
 				</div>
-
+        <div class="heading" style="z-index: 3">
+					<div style="position: relative; height:600px; width:800px">
+  					<canvas id="myChart3"></canvas>
+					</div>
+				</div>
 			</div>
 
 
@@ -718,7 +722,7 @@ mysqli_close($link);
               responsive: true
 			    }
 			});
-      ctx.style.top = "20%";
+      ctx.style.top = "25%";
 		</script>
 		<script>
 			var ctx = document.getElementById("myChart2");
@@ -766,7 +770,55 @@ mysqli_close($link);
               responsive: true,
 			    }
 			});
+      ctx.style.top = "25%";
 		</script>
+    <script>
+			var ctx = document.getElementById("myChart3");
+			var p1 = '<?php echo $Top5_Most_Avg_array[0][0];?>';
+			var p2 = '<?php echo $Top5_Most_Avg_array[1][0];?>';
+			var p3 = '<?php echo $Top5_Most_Avg_array[2][0];?>';
+			var p4 = '<?php echo $Top5_Most_Avg_array[3][0];?>';
+			var p5 = '<?php echo $Top5_Most_Avg_array[4][0];?>';
 
+			var data1 = '<?php echo $Top5_Most_Avg_array[0][1];?>';
+			var data2 = '<?php echo $Top5_Most_Avg_array[1][1];?>';
+			var data3 = '<?php echo $Top5_Most_Avg_array[2][1];?>';
+			var data4 = '<?php echo $Top5_Most_Avg_array[3][1];?>';
+			var data5 = '<?php echo $Top5_Most_Avg_array[4][1];?>';
+			var myChart = new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+			        labels: [p1, p2, p3, p4, p5],
+			        datasets: [{
+			            label: 'Avg rating',
+			            data: [data1, data2, data3, data4, data5],
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)',
+			                'rgba(255, 206, 86, 0.2)',
+			                'rgba(75, 192, 192, 0.2)',
+			                'rgba(153, 102, 255, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(153, 102, 255, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+              title: {
+                  display: true,
+                  text: 'Top 5 highest average rating',
+                  fontSize: 30,
+              },
+              responsive: true,
+			    }
+			});
+      ctx.style.top = "25%";
+		</script>
 	</body>
 </html>
