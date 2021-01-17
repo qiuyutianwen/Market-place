@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("Location: /login.php");
@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
   	$array_item = array();
   	$Top5_Most_Avg_name = $row["company"]."-".$row["product"];
   	$Top5_Most_Avg_rating = $row["AverageRating"];
-    
+
     array_push($array_item, $Top5_Most_Avg_name);
     array_push($array_item, $Top5_Most_Avg_rating);
     array_push($Top5_Most_Avg_array, $array_item);
@@ -41,10 +41,29 @@ if (mysqli_num_rows($result) > 0) {
     $array_item = array();
   	$Top5_Most_Visit_name = $row["company"]."-".$row["product"];
   	$Top5_Most_VisitTimes = $row["visitTimes"];
-    
+
     array_push($array_item, $Top5_Most_Visit_name);
     array_push($array_item, $Top5_Most_VisitTimes);
     array_push($Top5_Most_Visit_array, $array_item);
+  }
+} else {
+  echo "<script>alert('This page hasn't been visited now!');</script>";
+}
+
+//get top 5 most recently visited data
+$sql = "SELECT company, product, reg_date FROM visitTimes ORDER BY reg_date DESC LIMIT 5;";
+$result = mysqli_query($link, $sql);
+$Top5_Most_Recently_Visit_array = array();
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    $array_item = array();
+    $Top5_Most_Recently_Visit_name = $row["company"]."-".$row["product"];
+    $Top5_Most_Recently_Visit_date = $row["reg_date"];
+
+    array_push($array_item, $Top5_Most_Recently_Visit_name);
+    array_push($array_item, $Top5_Most_Recently_Visit_date);
+    array_push($Top5_Most_Recently_Visit_array, $array_item);
   }
 } else {
   echo "<script>alert('This page hasn't been visited now!');</script>";
@@ -86,7 +105,7 @@ mysqli_close($link);
 	<body>
 		<main>
 			<div class="frame">
-				
+
 				<div class="frame__title-wrap">
 					<?php echo "<h1 class='frame__title'>Welcome, $username</h1>";?>
 				</div>
@@ -101,7 +120,7 @@ mysqli_close($link);
 					<p class="header__text">Welcome to our fancy market.</p>
 
 				</div>
-				
+
 				<div class="heading" id = "heading3" style="z-index: 8">
 					Yu Qiu
 					<div class="container demo-3">
@@ -217,7 +236,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p1.png" alt="img01">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 1</h3>
 										<a href="rating.php?company=dongmeiyin&product=p1&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/JennieIvoryChunkyCardigan.php">Take a look</a>
 									</figcaption>
@@ -227,7 +246,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p2.png" alt="img02">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 2</h3>
 										<a href="rating.php?company=dongmeiyin&product=p2&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/LACECOLLARBLOUSE.php">Take a look</a>
 									</figcaption>
@@ -237,7 +256,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p3.png" alt="img03">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 3</h3>
 										<a href="rating.php?company=dongmeiyin&product=p3&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/BLACKBUTTONSHORTS.php">Take a look</a>
 									</figcaption>
@@ -247,7 +266,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p4.png" alt="img04">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 4</h3>
 										<a href="rating.php?company=dongmeiyin&product=p4&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/BLACKSLITMIDISKIRT.php">Take a look</a>
 									</figcaption>
@@ -257,7 +276,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p5.png" alt="img05">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 5</h3>
 										<a href="rating.php?company=dongmeiyin&product=p5&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/WHITEPUFFSLEEVEDRESS.php">Take a look</a>
 									</figcaption>
@@ -267,7 +286,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p6.png" alt="img06">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 6</h3>
 										<a href="rating.php?company=dongmeiyin&product=p6&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/BLACKZIPUPDRESS.php">Take a look</a>
 									</figcaption>
@@ -277,7 +296,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p7.png" alt="img07">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 7</h3>
 										<a href="rating.php?company=dongmeiyin&product=p7&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/CoralLongScarf.php">Take a look</a>
 									</figcaption>
@@ -287,7 +306,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p8.png" alt="img08">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 8</h3>
 										<a href="rating.php?company=dongmeiyin&product=p8&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/PinkSheerBowScrunchie.php">Take a look</a>
 									</figcaption>
@@ -297,7 +316,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p9.png" alt="img09">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 9</h3>
 										<a href="rating.php?company=dongmeiyin&product=p9&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/AngelTearEarrings.php">Take a look</a>
 									</figcaption>
@@ -307,7 +326,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/dongmeiyin/p10.png" alt="img10">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 10</h3>
 										<a href="rating.php?company=dongmeiyin&product=p10&type=png" style="bottom: 50px">Review</a>
 										<a href="http://lyn272.net/BeadedNecklace.php">Take a look</a>
 									</figcaption>
@@ -324,7 +343,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p1.jpg" alt="img01">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 1</h3>
 										<a href="rating.php?company=anbo&product=p1&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model1.php">Take a look</a>
 									</figcaption>
@@ -334,7 +353,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p2.jpg" alt="img02">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 2</h3>
 										<a href="rating.php?company=anbo&product=p2&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model2.php">Take a look</a>
 									</figcaption>
@@ -344,7 +363,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p3.jpg" alt="img03">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 3</h3>
 										<a href="rating.php?company=anbo&product=p3&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model3.php">Take a look</a>
 									</figcaption>
@@ -354,7 +373,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p4.png" alt="img04">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 4</h3>
 										<a href="rating.php?company=anbo&product=p4&type=png" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model4.php">Take a look</a>
 									</figcaption>
@@ -364,7 +383,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p5.jpg" alt="img05">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 5</h3>
 										<a href="rating.php?company=anbo&product=p5&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model5.php">Take a look</a>
 									</figcaption>
@@ -374,7 +393,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p6.jpg" alt="img06">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 6</h3>
 										<a href="rating.php?company=anbo&product=p6&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model6.php">Take a look</a>
 									</figcaption>
@@ -384,7 +403,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p7.jpg" alt="img07">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 7</h3>
 										<a href="rating.php?company=anbo&product=p7&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model7.php">Take a look</a>
 									</figcaption>
@@ -394,7 +413,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p8.jpg" alt="img08">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 8</h3>
 										<a href="rating.php?company=anbo&product=p8&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model8.php">Take a look</a>
 									</figcaption>
@@ -404,7 +423,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p9.jpg" alt="img09">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 9</h3>
 										<a href="rating.php?company=anbo&product=p9&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model9.php">Take a look</a>
 									</figcaption>
@@ -414,7 +433,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/anbo/p10.jpg" alt="img10">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 10</h3>
 										<a href="rating.php?company=anbo&product=p10&type=jpg" style="bottom: 50px">Review</a>
 										<a href="https://ismondaytmr.com/product/model10.php">Take a look</a>
 									</figcaption>
@@ -431,7 +450,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p1.jpg" alt="img01">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 1</h3>
 										<a href="rating.php?company=jingxue&product=p1&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/vrset.php?id=vrset">Take a look</a>
 									</figcaption>
@@ -441,7 +460,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p2.jpg" alt="img02">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 2</h3>
 										<a href="rating.php?company=jingxue&product=p2&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/disney.php?id=disney">Take a look</a>
 									</figcaption>
@@ -451,7 +470,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p3.jpg" alt="img03">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 3</h3>
 										<a href="rating.php?company=jingxue&product=p3&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/yellowStone.php?id=yellowStone">Take a look</a>
 									</figcaption>
@@ -461,7 +480,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p4.jpg" alt="img04">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 4</h3>
 										<a href="rating.php?company=jingxue&product=p4&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/yosemite.php?id=yosemite">Take a look</a>
 									</figcaption>
@@ -471,7 +490,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p5.jpg" alt="img05">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 5</h3>
 										<a href="rating.php?company=jingxue&product=p5&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/paris.php?id=paris">Take a look</a>
 									</figcaption>
@@ -481,7 +500,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p6.jpg" alt="img06">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 6</h3>
 										<a href="rating.php?company=jingxue&product=p6&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/manhattan.php?id=manhattan">Take a look</a>
 									</figcaption>
@@ -491,7 +510,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p7.jpg" alt="img07">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 7</h3>
 										<a href="rating.php?company=jingxue&product=p7&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/bora.php?id=bora">Take a look</a>
 									</figcaption>
@@ -501,7 +520,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p8.jpg" alt="img08">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 8</h3>
 										<a href="rating.php?company=jingxue&product=p8&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/dubai.php?id=dubai">Take a look</a>
 									</figcaption>
@@ -511,7 +530,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p9.jpg" alt="img09">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 9</h3>
 										<a href="rating.php?company=jingxue&product=p9&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/tokyo.php?id=tokyo">Take a look</a>
 									</figcaption>
@@ -521,7 +540,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/jingxue/p10.jpg" alt="img10">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 10</h3>
 										<a href="rating.php?company=jingxue&product=p10&type=jpg" style="bottom: 50px">Review</a>
 										<a href="http://thesnowview.com/products/tahiti.php?id=tahiti">Take a look</a>
 									</figcaption>
@@ -538,7 +557,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p1.png" alt="img01">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 1</h3>
 										<a href="rating.php?company=yirusun&product=p1&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/self_review.php">Take a look</a>
 									</figcaption>
@@ -548,7 +567,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p2.png" alt="img02">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 2</h3>
 										<a href="rating.php?company=yirusun&product=p2&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/peer_review.php">Take a look</a>
 									</figcaption>
@@ -558,7 +577,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p3.png" alt="img03">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 3</h3>
 										<a href="rating.php?company=yirusun&product=p3&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/manager_review.php">Take a look</a>
 									</figcaption>
@@ -568,7 +587,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p4.png" alt="img04">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 4</h3>
 										<a href="rating.php?company=yirusun&product=p4&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/subordinate_review.php">Take a look</a>
 									</figcaption>
@@ -578,7 +597,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p5.png" alt="img05">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 5</h3>
 										<a href="rating.php?company=yirusun&product=p5&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/adjust_salary.php">Take a look</a>
 									</figcaption>
@@ -588,7 +607,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p6.png" alt="img06">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 6</h3>
 										<a href="rating.php?company=yirusun&product=p6&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/weekly_committed_times.php">Take a look</a>
 									</figcaption>
@@ -598,7 +617,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p7.png" alt="img07">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 7</h3>
 										<a href="rating.php?company=yirusun&product=p7&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/send_warning.php">Take a look</a>
 									</figcaption>
@@ -608,7 +627,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p8.png" alt="img08">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 8</h3>
 										<a href="rating.php?company=yirusun&product=p8&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/hr_meeting.php">Take a look</a>
 									</figcaption>
@@ -618,7 +637,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p9.png" alt="img09">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 9</h3>
 										<a href="rating.php?company=yirusun&product=p9&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/fire.php">Take a look</a>
 									</figcaption>
@@ -628,7 +647,7 @@ mysqli_close($link);
 								<figure>
 									<img src="images/yirusun/p10.png" alt="img10">
 									<figcaption>
-										<h3>Settings</h3>
+										<h3>Product 10</h3>
 										<a href="rating.php?company=yirusun&product=p10&type=png" style="bottom: 50px">Review</a>
 										<a href="http://kumabaobao.com/service/add_new_employee.php">Take a look</a>
 									</figcaption>
@@ -638,43 +657,72 @@ mysqli_close($link);
 					</div>
 				</div>
 				<div class="heading" style="z-index: 2">
-					<div style="position:absolute; top: 100px">
-					<h5 style="top: 100px; width: 600px"> Top 5 most visited products.</h5>
-					<canvas id="myChart1" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
+					<div style="position: relative; height:600px; width:800px">
+  					<canvas id="myChart1"></canvas>
 					</div>
 				</div>
 				<div class="heading" style="z-index: 3">
-					<div style="position:absolute; top: 100px">
-					<h5 style="top: 100px; width: 600px"> Top 5 highest average rating.</h5>
-					<canvas id="myChart2" width="80" height="80" style="position:absolute; left:auto; top: 200px; width: 500px; height: 500px"></canvas>
+					<div style="position: relative; height:600px; width:800px">
+  					<canvas id="myChart2"></canvas>
 					</div>
 				</div>
-
+        <div class="heading" style="z-index: 3">
+          <h3>Top 5 Most Recently Visited Products</h3>
+          <div style="overflow-x:auto;">
+          <table class="rwd-table">
+            <tr>
+              <th>Date(Newest->Oldest)</th>
+              <th>Product Name</th>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[0][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[0][0];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[1][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[1][0];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[2][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[2][0];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[3][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[3][0];?></td>
+            </tr>
+            <tr>
+              <td data-th="Date(Newest->Oldest)"><?php echo $Top5_Most_Recently_Visit_array[4][1];?></td>
+              <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[4][0];?></td>
+            </tr>
+          </table>
+        </div>
+				</div>
 			</div>
 
-			
+
 		</main>
-		<script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+    <script src="JS/toucheffects.js"></script>
+    <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
+    <script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
+    <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
+    <script src="JS/bundle.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
 			function monitorHeading () {
-			    var h_array = document.querySelectorAll("div.heading");
-			    var i;
-			    var z_index_array = [];
-				for (i = 0; i < h_array.length; i++) {
-					z_index_array.push(h_array[i].style["z-index"]);
-				}
-			    var max_of_z_index = Math.max.apply(Math, z_index_array) + 1;
-			    for (i = 0; i < h_array.length; i++) {
-					if(h_array[i].style.opacity !== "0")
-					{
-						h_array[i].style["z-index"] = max_of_z_index;
-					}
-				}
+          $(".heading").each(function() {
+            if($(this).css('opacity') !== "0")
+            {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
 			}
-			    
 			//--- 150 is a good compromise between UI response and browser load.
-			window.setInterval (monitorHeading, 1000);
+			window.setInterval (monitorHeading, 150);
 		</script>
-		
+
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 		<script>
 			var ctx = document.getElementById("myChart1");
@@ -720,9 +768,19 @@ mysqli_close($link);
 			                    beginAtZero:true
 			                }
 			            }]
-			        }
+                },
+              title: {
+                  display: true,
+                  text: 'Top 5 Most Visited Products',
+                  fontSize: 30,
+              },
+              responsive: true
 			    }
 			});
+      ctx.style.top = "25%";
+      ctx.style.left = "25%";
+      ctx.style.width = "50%";
+      ctx.style.height = "50%";
 		</script>
 		<script>
 			var ctx = document.getElementById("myChart2");
@@ -762,20 +820,18 @@ mysqli_close($link);
 			        }]
 			    },
 			    options: {
-			        scales: {
-			            yAxes: [{
-			                ticks: {
-			                    beginAtZero:true
-			                }
-			            }]
-			        }
+              title: {
+                  display: true,
+                  text: 'Top 5 Highest Average Rating Products',
+                  fontSize: 30,
+              },
+              responsive: true,
 			    }
 			});
+      ctx.style.top = "25%";
+      ctx.style.left = "25%";
+      ctx.style.width = "50%";
+      ctx.style.height = "50%";
 		</script>
-		<script src="JS/toucheffects.js"></script>
-		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
-		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
-		<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-		<script src="JS/bundle.umd.js"></script>
 	</body>
 </html>
