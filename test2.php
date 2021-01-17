@@ -14,8 +14,8 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 $fb = new \Facebook\Facebook([
-  'app_id' => '{your-app-id}',           //Replace {your-app-id} with your app ID
-  'app_secret' => '{your-app-secret}',   //Replace {your-app-secret} with your app secret
+  'app_id' => '830689571103351',           //Replace {your-app-id} with your app ID
+  'app_secret' => '3191d39933fbd814c239f0a6a059865a',   //Replace {your-app-secret} with your app secret
   'graph_api_version' => 'v5.0',
 ]);
 
