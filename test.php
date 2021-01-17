@@ -657,7 +657,7 @@ mysqli_close($link);
 					</div>
 				</div>
         <div class="heading" style="z-index: 3">
-          <h1>Top 5 Most Recently Visited Products</h1>
+          <h3>Top 5 Most Recently Visited Products</h3>
           <div style="overflow-x:auto;">
           <table class="rwd-table">
             <tr>

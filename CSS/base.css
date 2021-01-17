@@ -365,11 +365,14 @@ a:focus {
 }
 
 .rwd-table {
-  background-color: #f1f1c1;
   padding: 15px;
   text-align: left;
 }
 
 .rwd-table th {
-  background-color: #f1f1c1;
+  color: #fff633;
+}
+.rwd-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+  color: #3d3c33;
 }
