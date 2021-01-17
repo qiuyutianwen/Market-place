@@ -1,13 +1,14 @@
 <?php
-
-require './fbconfig.php';
 // Initialize the session
-session_destroy();
+session_start();
 
 // Unset all of the session variables
-unset($_SESSION['access_token']);
+$_SESSION = array();
+
+// Destroy the session.
+session_destroy();
 
 // Redirect to login page
-header("location: test2.php");
-
+header("location: login.php");
+exit;
 ?>

@@ -1,30 +1,34 @@
 <?php
-
-require_once __DIR__ . '/vendor/autoload.php';
+require_once './vendor/autoload.php'; // change path as needed
 
 $fb = new \Facebook\Facebook([
-  'app_id' => '830689571103351',           //Replace {your-app-id} with your app ID
-  'app_secret' => '3191d39933fbd814c239f0a6a059865a',   //Replace {your-app-secret} with your app secret
-  'graph_api_version' => 'v5.0',
-  'default_access_token' => 'EAALzgfzN4ncBAGzTrmuqCI9Y2vNcxLsVmPg6sE9WSQIXB8Pqn8N7GdV8dBsvN4Y5ofrZAIgHxLm09TGDGaThKlQETJEQhY9FMWQY1DQ9hE1exl0AuSYdxElmpHDeiUU9IwQZAhFVJhKaKp7w2rPiXJBPOsPZCMeuqWU7k7ReZAY0nO2IKZBnJ51k9kKycrZBccuKtIZBckONoRmOnL28rYlI2T0j4lHcrYK6yO7C8EmQAZDZD',
+  'app_id' => '830689571103351',
+  'app_secret' => '3191d39933fbd814c239f0a6a059865a',
+  'default_graph_version' => 'v2.10',
+  //'default_access_token' => '{access-token}', // optional
 ]);
 
-$helper = $fb->getRedirectLoginHelper();
-$login_url = $helper->getLoginUrl("https://sleepy-meadow-98391.herokuapp.com/test2.php");
+// Use one of the helper classes to get a Facebook\Authentication\AccessToken entity.
+//   $helper = $fb->getRedirectLoginHelper();
+//   $helper = $fb->getJavaScriptHelper();
+//   $helper = $fb->getCanvasHelper();
+//   $helper = $fb->getPageTabHelper();
 
 try {
-
-// Get your UserNode object, replace {access-token} with your token
-  $accesstoken = $helper->getAccessToken();
-  if(isset($accesstoken)){
-    $_SESSION['access_token'] = (string)$accesstoken;
-    header('Location:test2.php');
-  }
-
-} catch(Exception $exc) {
-        // Returns Graph API errors when they occur
-  echo $exc->getTraceAsString();
+  // Get the \Facebook\GraphNodes\GraphUser object for the current user.
+  // If you provided a 'default_access_token', the '{access-token}' is optional.
+  $response = $fb->get('/me', '{access-token}');
+} catch(\Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(\Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
+
+$me = $response->getGraphUser();
+echo 'Logged in as ' . $me->getName();
 
 ?>
