@@ -658,6 +658,7 @@ mysqli_close($link);
 				</div>
         <div class="heading" style="z-index: 3">
           <h1>Top 5 Most Recently Visited Products</h1>
+          <div style="overflow-x:auto;">
           <table class="rwd-table">
             <tr>
               <th>Date(Newest->Oldest)</th>
@@ -684,6 +685,7 @@ mysqli_close($link);
               <td data-th="Product Name"><?php echo $Top5_Most_Recently_Visit_array[4][0];?></td>
             </tr>
           </table>
+        </div>
 				</div>
 			</div>
 
