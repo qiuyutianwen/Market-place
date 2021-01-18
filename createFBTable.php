@@ -12,7 +12,7 @@ if(mysqli_query($link, $sql1))
 
 //set char set
 mysqli_set_charset($link,"utf8mb4");
-echo "Current character set is: " . mysqli_character_set_name($link);
+echo "Current character set is: " . mysqli_character_set_name($link) . "<br />";
 
 // sql to create table
 $sql2 = "CREATE TABLE FBTable (
@@ -29,26 +29,26 @@ if (mysqli_query($link, $sql2)) {
   echo "Error creating table: " . mysqli_error($link);
 }
 
-//insert test data
-$sql3 = "INSERT INTO FBTable (fbID, username, email)
-VALUES ('4252345', '仇禹', 'qiuyutianwen@gmail.com');";
+// //insert test data
+// $sql3 = "INSERT INTO FBTable (fbID, username, email)
+// VALUES ('4252345', '仇禹', 'qiuyutianwen@gmail.com');";
+//
+// if (mysqli_multi_query($link, $sql3)) {
+//   echo "New records created successfully<br />";
+// } else {
+//   echo "Error: " . $sql3 . "<br />" . mysqli_error($link);
+// }
 
-if (mysqli_multi_query($link, $sql3)) {
-  echo "New records created successfully<br />";
-} else {
-  echo "Error: " . $sql3 . "<br />" . mysqli_error($link);
-}
-
-//get top 5 most average rating data
-$sql4 = "SELECT id, fbID, username, email, reg_date FROM FBTable ORDER BY id";
-$result = mysqli_query($link, $sql4);
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-  	echo $row["id"] . " " . $row["fbID"] . " " . $row["username"] . " " . $row["email"] . " " . $row["reg_date"];
-  }
-} else {
-  echo "No data!";
-}
+// //get top 5 most average rating data
+// $sql4 = "SELECT id, fbID, username, email, reg_date FROM FBTable ORDER BY id";
+// $result = mysqli_query($link, $sql4);
+// if (mysqli_num_rows($result) > 0) {
+//   // output data of each row
+//   while($row = mysqli_fetch_assoc($result)) {
+//   	echo $row["id"] . " " . $row["fbID"] . " " . $row["username"] . " " . $row["email"] . " " . $row["reg_date"];
+//   }
+// } else {
+//   echo "No data!";
+// }
 mysqli_close($link);
 ?>
