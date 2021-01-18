@@ -12,7 +12,8 @@
 //include 'test.php';
 //include 'login.php';
 //include 'test2.php';
-include 'test3.html';
+//include 'test3.html';
+include 'createFBTable.php';
 ?>
 </body>
 </html>
