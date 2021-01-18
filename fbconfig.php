@@ -9,7 +9,7 @@ $fb = new \Facebook\Facebook([
 ]);
 
 // Use one of the helper classes to get a Facebook\Authentication\AccessToken entity.
-//   $helper = $fb->getRedirectLoginHelper();
+$helper = $fb->getRedirectLoginHelper();
 //   $helper = $fb->getJavaScriptHelper();
 //   $helper = $fb->getCanvasHelper();
 //   $helper = $fb->getPageTabHelper();
