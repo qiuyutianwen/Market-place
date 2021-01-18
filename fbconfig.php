@@ -17,7 +17,8 @@ $helper = $fb->getRedirectLoginHelper();
 try {
   // Get the \Facebook\GraphNodes\GraphUser object for the current user.
   // If you provided a 'default_access_token', the '{access-token}' is optional.
-  $response = $fb->get('/me', '{access-token}');
+  $accessToken = $helper->getAccessToken();
+  $response = $fb->get('/me', $accessToken);
 } catch(\Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
