@@ -1,30 +1,30 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("Location: /scroll.php");
     exit;
 }
- 
+
 // Include config file
 require_once "config.php";
- 
+
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter username.";
     } else{
         $username = trim($_POST["username"]);
     }
-    
+
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($username_err))
     {
         echo "<script>alert('$username_err');</script>";
-    } elseif (!empty($password_err)) 
+    } elseif (!empty($password_err))
     {
         echo "<script>alert('$password_err');</script>";
     }
@@ -42,33 +42,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
-        
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
+
             // Set parameters
             $param_username = $username;
-            
+
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Store result
                 mysqli_stmt_store_result($stmt);
-                
+
                 // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                if(mysqli_stmt_num_rows($stmt) == 1){
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
-                            
+
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
+                            $_SESSION["username"] = $username;
+
                             // Redirect user to welcome page
                             header("Location: /scroll.php");
                         } else{
@@ -89,13 +89,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_close($stmt);
         }
     }
-    
+
     // Close connection
     mysqli_close($link);
     if($username_err === "No account found with that username.")
     {
         echo "<script>alert('$username_err');</script>";
-    } elseif ($password_err === "The password you entered was not valid.") 
+    } elseif ($password_err === "The password you entered was not valid.")
     {
         echo "<script>alert('$password_err');</script>";
     }
@@ -105,7 +105,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html>
     <head>
-        
+
         <title>Login Form</title>
 
         <meta charset="UTF-8">
@@ -114,8 +114,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <link href="https://fonts.googleapis.com/css?family=Lato|Nanum+Gothic:700|Raleway&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="CSS/StyleLoginForm.css"/>  
-        <link rel="stylesheet" type="text/css" href="CSS/style.css" />      
+        <link rel="stylesheet" href="CSS/StyleLoginForm.css"/>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
 
     </head>
 
@@ -128,9 +128,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               xfbml      : true,
               version    : 'v9.0'
             });
-              
-            FB.AppEvents.logPageView();   
-              
+
+            FB.AppEvents.logPageView();
+
           };
 
           (function(d, s, id){
@@ -146,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if(response.authResponse){
                         fbAfterLogin();
                     }
-                });
+                }, {scope: 'public_profile,email'});
           }
 
           function fbAfterLogin(){
@@ -196,14 +196,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <button class="" type="button" aria-placeholder="Click Here to Login and SignUp">
                     <i class="far fa-user"></i> &nbsp; My Account
                 </button>
-            </div>            
+            </div>
 
             <div id="AccForm">
-            
+
                 <div class="m5 login-panel" id="test">
-                    
+
                     <span id="close"><i class="fas fa-times"></i></span>
-                    
+
                     <ul>
                         <li>
                             <div class="single-signin">
@@ -225,32 +225,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </li>
 
                         <li>
-                            <div class="signup-form" id="newUser">                        
+                            <div class="signup-form" id="newUser">
                                 <div class="header">
                                     <div class="welcome">SignUp</div>
                                     <div class="subtitle">Create your Account and Connect with Us.</div>
                                 </div>
-                                
+
                                 <form class="form-content" role="form" action="register.php" method="post">
                                     <div class="input-field">
                                         <input type="email" id="emailId" name="username" required="required" class="txtField" placeholder="&#xf0e0; E-Mail ID"/>
                                         <span class="underLine"></span>
                                     </div>
-                                    
+
                                     <div class="input-field">
                                         <input type="password" name="password" required="required" class="txtField" placeholder="&#xf084; Password"/>
                                         <span class="underLine"></span>
                                     </div>
-                                    
+
                                     <div class="input-field">
                                             <input type="password" name="confirmpassword" required="required" class="txtField" placeholder="&#xf084; Confirm Password"/>
                                             <span class="underLine"></span>
                                         </div>
-                                        
+
                                     <div class="form-footer">
-                                        <button class="submit-btn" name="submit" type="submit" value="submit">SignUp</button>    
-                                    </div>    
-                                </form>                            
+                                        <button class="submit-btn" name="submit" type="submit" value="submit">SignUp</button>
+                                    </div>
+                                </form>
                             </div>
 
                             <div class="login-form">
@@ -258,36 +258,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <div class="welcome">Welcome Back</div>
                                     <!-- <div class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div> -->
                                 </div>
-                                
+
                                 <form class="form-content" role="form" action="login.php" method="post">
                                     <div class="input-field">
                                         <input type="text" id="userName" name="username" required="required" class="txtField"  placeholder="&#xf007; Username"/>
                                         <span class="underLine"></span>
                                     </div>
-                                    
+
                                     <div class="input-field">
                                         <input type="password" name="password" required="required" class="txtField" placeholder="&#xf084; Password"/>
                                         <span class="underLine"></span>
                                     </div>
-                                    
+
                                     <div class="form-footer">
-                                        <button class="submit-btn" name="submit" type="submit" value="submit">LogIn</button>   
-                                        <a href="" title="Forgot Password ?">Forgot Password ?</a>                      
-                                    </div>    
+                                        <button class="submit-btn" name="submit" type="submit" value="submit">LogIn</button>
+                                        <a href="" title="Forgot Password ?">Forgot Password ?</a>
+                                    </div>
                                 </form>
-                                
+
                             </div>
 
                         </li>
-                    </ul>                
+                    </ul>
 
                 </div>
 
             </div>
 
         </div>
-        
-        
+
+
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
         <!-- <script>
 function submitform()
