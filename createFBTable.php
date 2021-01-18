@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
 
-mysqli_set_charset($conn,"utf8mb4");
+mysqli_set_charset($conn,"utf8");
 
 echo "Current character set is: " . mysqli_character_set_name($conn);
 // sql to create table
