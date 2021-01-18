@@ -9,11 +9,11 @@ $sql = "CREATE TABLE users (
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 
-if ($conn->query($sql) === TRUE) {
+if (mysqli_query($link, $sql)) {
   echo "Table users created successfully";
 } else {
-  echo "Error creating table: " . $conn->error;
+  echo "Error creating table: " . mysqli_error($link);
 }
 
-$conn->close();
+mysqli_close($link);
 ?>

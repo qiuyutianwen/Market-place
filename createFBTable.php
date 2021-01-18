@@ -1,11 +1,21 @@
 <?php
 require_once "config.php";
 
-mysqli_set_charset($conn,"utf8");
+//drop table
+$sql1 = "DROP TABLE IF EXISTS FBTable";
+if(mysqli_query($link, $sql1))
+{
+	echo "Table FBTable deleted successfully";
+} else {
+	echo "Error deleting table: " . mysqli_error($link);
+}
 
-echo "Current character set is: " . mysqli_character_set_name($conn);
+//set char set
+mysqli_set_charset($link,"utf8mb4");
+
+echo "Current character set is: " . mysqli_character_set_name($link);
 // sql to create table
-$sql = "CREATE TABLE users (
+$sql = "CREATE TABLE FBTable (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     fbID VARCHAR(50) NOT NULL UNIQUE,
     username VARCHAR(255) NOT NULL,
@@ -13,11 +23,11 @@ $sql = "CREATE TABLE users (
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 
-if ($conn->query($sql) === TRUE) {
-  echo "Table users created successfully";
+if (mysqli_query($link, $sql)) {
+  echo "Table FBTable created successfully";
 } else {
-  echo "Error creating table: " . $conn->error;
+  echo "Error creating table: " . mysqli_error($link);
 }
 
-$conn->close();
+mysqli_close($link);
 ?>
