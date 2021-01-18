@@ -11,7 +11,7 @@
 //include 'FetchUserData.php';
 //include 'test.php';
 //include 'login.php';
-include 'fbconfig.php';
+include 'test2.php';
 ?>
 </body>
 </html>
