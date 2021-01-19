@@ -59,6 +59,32 @@
             "Thanks for logging in, " + response.name + "!";
         });
       }
+
+      var c = '<?php echo $company;?>';
+  		var p = '<?php echo $product;?>';
+  		var t = '<?php echo $type;?>';
+  		var preurl = "rating.php"+"?company="+c+"&product="+p+"&type="+t;
+  		var myurl="handleAjax.php"+"?company="+c+"&product="+p+"&type="+t;
+  		function saveToTheDB(review) {
+  			$.ajax({
+  				url: myurl,
+  				method: "POST",
+  				data: {
+  					'save': 1,
+  					'ratedIndex': ratedIndex,
+  					'review': review
+  				}, success: function(data) {
+  					console.log(data);
+  					if(data == "True")
+  					{
+  						alert('Rating and review are succesfully uploaded!');
+  						window.location.href=preurl;
+  					}else{
+  						alert(data);
+  					}
+  				}
+  			});
+  		}
     </script>
 
     <!-- The JS SDK Login Button -->

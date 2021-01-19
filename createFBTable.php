@@ -45,7 +45,7 @@ if (mysqli_query($link, $sql2)) {
 // if (mysqli_num_rows($result) > 0) {
 //   // output data of each row
 //   while($row = mysqli_fetch_assoc($result)) {
-//   	echo $row["id"] . " " . $row["fbID"] . " " . $row["username"] . " " . $row["email"] . " " . $row["reg_date"];
+//   	echo $row["id"] . " " . $row["fbID"] . " " . $row["username"] . " " . $row["email"] . " " . $row["reg_date"] . "<br />";
 //   }
 // } else {
 //   echo "No data!";
