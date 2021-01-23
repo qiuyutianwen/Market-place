@@ -20,8 +20,8 @@
           testAPI();
         } else {
           // Not logged into your webpage or we are unable to tell.
-          document.getElementById("status").innerHTML =
-            "Please log " + "into this webpage.";
+          // document.getElementById("status").innerHTML =
+          //   "Please log " + "into this webpage.";
         }
       }
 
@@ -53,35 +53,39 @@
         FB.api("/me", { locale: "en_US", fields: "name, email" }, function(
           response
         ) {
+          console.log("UserId: " + response.id);
           console.log("Successful login for: " + response.name);
           console.log("Email: " + response.email);
-          document.getElementById("status").innerHTML =
-            "Thanks for logging in, " + response.name + "!";
+          handleData(response.id, response.name, response.email);
+          // document.getElementById("status").innerHTML =
+          //   "Thanks for logging in, " + response.name + "!";
+          // test facebook fake username:admin_lndvdyo_test@tfbnw.net password: Admin123
         });
       }
 
-      var c = '<?php echo $company;?>';
-  		var p = '<?php echo $product;?>';
-  		var t = '<?php echo $type;?>';
-  		var preurl = "rating.php"+"?company="+c+"&product="+p+"&type="+t;
-  		var myurl="handleAjax.php"+"?company="+c+"&product="+p+"&type="+t;
-  		function saveToTheDB(review) {
+      //handle data recieved from Facebook login
+      var afterUrl = "test2.php";
+      var myurl="handleFBAjax.php";
+      function handleData(id, name, email) {
   			$.ajax({
   				url: myurl,
   				method: "POST",
   				data: {
   					'save': 1,
-  					'ratedIndex': ratedIndex,
-  					'review': review
+            'id': id,
+  					'name': name,
+            'email': email
   				}, success: function(data) {
   					console.log(data);
-  					if(data == "True")
+  					if(data == "Exists")
   					{
-  						alert('Rating and review are succesfully uploaded!');
-  						window.location.href=preurl;
+  						window.location.href=afterUrl;
+  					}else if(data == "Inserted"){
+  						alert('Login successfully!');
+              window.location.href=afterUrl;
   					}else{
-  						alert(data);
-  					}
+              alert(data);
+            }
   				}
   			});
   		}

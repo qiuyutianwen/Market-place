@@ -1,17 +1,18 @@
 <?php
 session_start();
-require_once './vendor/autoload.php';
-$fb = new Facebook\Facebook([
-  'app_id' => '{app-id}', // Replace {app-id} with your app id
-  'app_secret' => '{app-secret}',
-  'default_graph_version' => 'v3.2',
-  ]);
+require_once "config.php";
 
-$helper = $fb->getRedirectLoginHelper();
+//get top 5 most average rating data
+$sql4 = "SELECT id, fbID, username, email, reg_date FROM FBTable ORDER BY id";
+$result = mysqli_query($link, $sql4);
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+  	echo $row["id"] . " " . $row["fbID"] . " " . $row["username"] . " " . $row["email"] . " " . $row["reg_date"] . "<br />";
+  }
+} else {
+  echo "No data!";
+}
 
-$permissions = ['email']; // Optional permissions
-$callbackUrl = htmlspecialchars('https://sleepy-meadow-98391.herokuapp.com/fbcallback.php');
-$loginUrl = $helper->getLoginUrl($callbackUrl, $permissions);
-
-echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+mysqli_close($link);
 ?>

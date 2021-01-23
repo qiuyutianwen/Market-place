@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html>
     <head>
 
-        <title>Login Form</title>
+        <title>CMPE272</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,60 +116,65 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <link rel="stylesheet" href="CSS/StyleLoginForm.css"/>
         <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <script src="https://apis.google.com/js/api:client.js"></script>
+        <script>
+        var googleUser = {};
+        var startApp = function() {
+          gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+              client_id: '560112578537-05o6k320bderaldnhrq00pj5n0n0ts6n.apps.googleusercontent.com',
+              cookiepolicy: 'single_host_origin',
+              // Request scopes in addition to 'profile' and 'email'
+              //scope: 'additional_scope'
+            });
+            attachSignin(document.getElementById('googleLogin'));
+          });
+        };
 
+        function attachSignin(element) {
+          console.log(element.id);
+          auth2.attachClickHandler(element, {},
+              function(googleUser) {
+                console.log('Full Name: ' + googleUser.getBasicProfile().getName());
+                console.log('Id: ' + googleUser.getBasicProfile().getId());
+                console.log('Email: ' + googleUser.getBasicProfile().getEmail());
+                handleData(googleUser.getBasicProfile().getId(), googleUser.getBasicProfile().getName(), googleUser.getBasicProfile().getEmail());
+              }, function(error) {
+                alert(JSON.stringify(error, undefined, 2));
+              });
+          //handle data recieved from Facebook login
+          var afterUrl = "scroll.php";
+          var myurl="handleGoogleAjax.php";
+          function handleData(id, name, email) {
+            $.ajax({
+              url: myurl,
+              method: "POST",
+              data: {
+                'save': 1,
+                'id': id,
+                'name': name,
+                'email': email
+              }, success: function(data) {
+                console.log(data);
+                if(data == "Exists")
+                {
+                  window.location.href=afterUrl;
+                }else if(data == "Inserted"){
+                  alert('Login successfully!');
+                  window.location.href=afterUrl;
+                }else{
+                  alert(data);
+                }
+              }
+            });
+          }
+        }
+        </script>
+        <script>startApp();</script>
     </head>
 
     <body class="demo-ama render">
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '830689571103351',
-              cookie     : true,
-              xfbml      : true,
-              version    : 'v9.0'
-            });
-
-            FB.AppEvents.logPageView();
-
-          };
-
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "https://connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-
-          function fbLogin(){
-                FB.login(function(response){
-                    if(response.authResponse){
-                        fbAfterLogin();
-                    }
-                }, {scope: 'public_profile,email'});
-          }
-
-          function fbAfterLogin(){
-            FB.getLoginStatus(function(response){
-                if(response.status === 'connected') {
-                    FB.api('/me', function(response) {
-                        console.log(response);
-                    });
-                }
-            });
-          }
-
-          function fbLogout(){
-            FB.getLoginStatus(function (response) {
-                if (response.authResponse) {
-                   window.location = "https://www.facebook.com/logout.php?next=" +
-                     'https://sleepy-meadow-98391.herokuapp.com/' +
-                     "&access_token=" + response.authResponse.accessToken;
-                }
-              });
-          }
-        </script>
-
         <div class="row">
             <h1 class="header__title">CMPE272 Team Project</h1>
             <div style="width:100%; position: absolute; right: 0; bottom: 0;"><div style="width:100%; position: relative;">
@@ -207,12 +212,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <ul>
                         <li>
                             <div class="single-signin">
-                                <button type="button" title="SignUp with Google" onclick="fbLogout()">
+                                <button type="button" title="SignUp with Google" id="googleLogin">
                                     <span><i class="fab fa-google"></i></span>
                                     <span id="accGoogle">LogIn with Google</span>
                                 </button>
 
-                                <button type="button" title="SignUp with Facebook" onclick="fbLogin()">
+                                <button type="button" title="SignUp with Facebook" onclick="facebookLogin()">
                                     <span><i class="fab fa-facebook-f"></i></span>
                                     <span id="accFacebook">LogIn with Facebook</span>
                                 </button>
@@ -287,15 +292,114 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         </div>
 
+        <!-- facebook login -->
+        <script
+          src="https://code.jquery.com/jquery-3.5.1.min.js"
+          integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+          crossorigin="anonymous"
+        ></script>
+        <script>
+          function statusChangeCallback(response) {
+            // Called with the results from FB.getLoginStatus().
+            console.log("statusChangeCallback");
+            console.log(response); // The current login status of the person.
+            if (response.status === "connected") {
+              // Logged into your webpage and Facebook.
+              console.log("Connected");
 
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-        <!-- <script>
-function submitform()
-{
-document.getElementById("register").submit();
-alert("your form submitted");
-}
-</script> -->
+            } else {
+              // Not logged into your webpage or we are unable to tell.
+              // document.getElementById("status").innerHTML =
+              //   "Please log " + "into this webpage.";
+              console.log("Disconnected");
+            }
+          }
+
+          function facebookLogin() {
+            // Called when a person is finished with the Login Button.
+            FB.getLoginStatus(function(response) {
+              // See the onlogin handler
+              if (response.status === "connected") {
+                console.log("Already connected, disconnect now");
+                FB.logout();
+              }
+              FB.login(function(response) {
+                  if (response.authResponse) {
+                   console.log('Welcome!  Fetching your information.... ');
+                   FB.api('/me', function(response) {
+                     console.log('Good to see you, ' + response.name + '.');
+                   });
+                   testAPI();
+                  } else {
+                   console.log('User cancelled login or did not fully authorize.');
+                  }
+              }, { auth_type: 'reauthenticate' });
+            });
+          }
+
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId: "830689571103351",
+              cookie: true, // Enable cookies to allow the server to access the session.
+              xfbml: true, // Parse social plugins on this webpage.
+              version: "v9.0" // Use this Graph API version for this call.
+            });
+
+            FB.getLoginStatus(function(response) {
+              // Called after the JS SDK has been initialized.
+              statusChangeCallback(response); // Returns the login status.
+            });
+          };
+
+          function testAPI() {
+            // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+            console.log("Welcome!  Fetching your information.... ");
+            FB.api("/me", { locale: "en_US", fields: "name, email" }, function(
+              response
+            ) {
+              console.log("UserId: " + response.id);
+              console.log("Successful login for: " + response.name);
+              console.log("Email: " + response.email);
+              handleFBData(response.id, response.name, response.email);
+              // document.getElementById("status").innerHTML =
+              //   "Thanks for logging in, " + response.name + "!";
+              // test facebook fake username:admin_lndvdyo_test@tfbnw.net password: Admin123
+            });
+          }
+
+          //handle data recieved from Facebook login
+          var afterUrl = "scroll.php";
+          var myurl="handleFBAjax.php";
+          function handleFBData(id, name, email) {
+            $.ajax({
+              url: myurl,
+              method: "POST",
+              data: {
+                'save': 1,
+                'id': id,
+                'name': name,
+                'email': email
+              }, success: function(data) {
+                console.log(data);
+                if(data == "Exists")
+                {
+                  window.location.href=afterUrl;
+                }else if(data == "Inserted"){
+                  alert('Login successfully!');
+                  window.location.href=afterUrl;
+                }else{
+                  alert(data);
+                }
+              }
+            });
+          }
+        </script>
+        <script
+          async
+          defer
+          crossorigin="anonymous"
+          src="https://connect.facebook.net/en_US/sdk.js"
+        ></script>
         <script src="JS/ScriptLoginForm.js"></script>
         <script src="JS/charming.min.js"></script>
         <script src="JS/anime.min.js"></script>
